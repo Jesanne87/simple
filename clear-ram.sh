@@ -32,4 +32,4 @@ echo -e "This freed $(echo "$freemem_after - $freemem_before" | bc) MiB, so now 
 echo ""
 read -n1 -r -p "                Press any key to continue..."
     sleep 1
-    system
+    menu
