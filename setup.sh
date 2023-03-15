@@ -81,17 +81,15 @@ mkdir /var/lib/premium-script;
 default_email=$( curl https://raw.githubusercontent.com/${GitUser}/email/main/default.conf )
 clear
 #Nama penyedia script
-echo -e "\e[1;32m════════════════════════════════════════════════════════════\e[0m"
-echo ""
-echo -e "   \e[1;32mPlease enter the name of Provider for Script."
+echo -e "   \e[93mPlease Enter the name of the Script Provider\e[0m"
 read -p "   Name : " nm
 echo $nm > /root/provided
-echo ""
-#Email domain
-echo -e "\e[1;32m════════════════════════════════════════════════════════════\e[0m"
 echo -e ""
-echo -e "   \e[1;32mPlease enter your email Domain/Cloudflare."
-echo -e "   \e[1;31m(Press ENTER for default email)\e[0m"
+#Email domain
+echo -e "${ORANGE}════════════════════════════════════════════════════════════\e[0m"
+echo -e ""
+echo -e "   \e[93mPlease enter your email Domain/Cloudflare\e[0m"
+echo -e "   \e[93m(Press ENTER for default email)\e[0m"
 read -p "   Email : " email
 default=${default_email}
 new_email=$email
@@ -105,14 +103,13 @@ mkdir -p /usr/local/etc/xray/
 touch /usr/local/etc/xray/email
 echo $sts > /usr/local/etc/xray/email
 echo ""
-echo -e "\e[1;32m════════════════════════════════════════════════════════════\e[0m"
+echo -e "${ORANGE}════════════════════════════════════════════════════════════\e[0m"
 echo ""
-echo -e "   .----------------------------------."
-echo -e "   |\e[1;32mPlease select a domain type below \e[0m|"
-echo -e "   '----------------------------------'"
-echo -e "     \e[1;32m1)\e[0m Enter your Subdomain"
-echo -e "     \e[1;32m2)\e[0m Use a random Subdomain"
-echo -e "   ------------------------------------"
+echo -e "   \e[93mPlease select a domain type below \e[0m"
+echo -e "     \e[1;32m1)\e[0m \e[93mEnter your Subdomain\e[0m"
+echo -e "     \e[1;32m2)\e[0m \e[93mUse a random Subdomain\e[0m"
+echo ""
+echo -e "   ${ORANGE}════════════════════════════════════\e[0m"
 read -p "   Please select numbers 1-2 or Any Button(Random) : " host
 echo ""
 if [[ $host == "1" ]]; then
