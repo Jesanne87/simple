@@ -161,7 +161,7 @@ echo -e "    [\e[$number 01${NC}]${YLW} • Xray Vmess & Vless ${NC}      [\e[$n
 echo -e "    [\e[$number 02${NC}]${YLW} • Trojan Xray & WS ${NC}        [\e[$number 08${NC}]${YLW} • Themes ${NC}"
 echo -e "    [\e[$number 03${NC}]${YLW} • SSH & OPENVPN  ${NC}          [\e[$number 09${NC}]${YLW} • Add IP ${NC}"
 echo -e "    [\e[$number 04${NC}]${YLW} • System Menu ${NC}             [\e[$number 10${NC}]${YLW} • Info ${NC}"
-echo -e "    [\e[$number 05${NC}]${YLW} • Check Running ${NC}           [\e[$number 11${NC}]${YLW} • Log Cleaner ${NC}"
+echo -e "    [\e[$number 05${NC}]${YLW} • Check Running ${NC}           [\e[$number 11${NC}]${YLW} • RAM Cleaner ${NC}"
 echo -e "    [\e[$number 06${NC}]${YLW} • Change Port ${NC}             [\e[$number 12${NC}]${YLW} • Exit ${NC}"
 echo -e " "
 echo -e " \e[$line ┌──────────────────────────────────────────────────────┐${NC}"
@@ -203,7 +203,7 @@ case $menu in
     about
     ;;
 11)
-    clear-log
+    clear-ram
     ;;
 x)
     clear
