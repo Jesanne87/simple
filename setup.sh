@@ -191,7 +191,7 @@ echo "\033[1;37m" > /etc/box
 echo "1;31m" > /etc/line
 echo "1;32m" > /etc/text
 echo "1;33m" > /etc/below
-echo "47m" > /etc/back
+echo "\033[0;37m" > /etc/back
 echo "1;35m" > /etc/number
 echo 3d > /usr/bin/test
 # Version
