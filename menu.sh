@@ -203,7 +203,7 @@ case $menu in
     about
     ;;
 11)
-    clear-ram
+    clean-ram
     ;;
 x)
     clear
