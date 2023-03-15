@@ -1,5 +1,5 @@
 #wget https://github.com/${GitUser}/
-GitUser="Internetvps"
+GitUser="Jesanne87"
 #IZIN SCRIPT
 MYIP=$(curl -sS ipv4.icanhazip.com)
 echo -e "\e[32mloading...\e[0m"
@@ -75,7 +75,7 @@ case $sys in
 add-host
 ;;
 2)
-cert
+certv2ray
 ;;
 3)
 dns

@@ -1,6 +1,6 @@
 #!/bin/bash
 # // wget https://github.com/${GitUser}/
-GitUser="Internetvps"
+GitUser="Jesanne87"
 
 # // MY IPVPS
 export MYIP=$(curl -sS ipv4.icanhazip.com)
@@ -57,10 +57,10 @@ touch /var/log/xray/access.log;
 touch /var/log/xray/error.log;
 
 # // VERSION XRAY
-export version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
+#export version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
 
 # // INSTALL CORE XRAY
-bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version ${version}
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.7.5
 
 systemctl stop nginx
 
@@ -1200,10 +1200,10 @@ systemctl restart xray@trojannone
 
 # download script
 cd /usr/bin
-wget -O port-xray "https://raw.githubusercontent.com/${GitUser}/drgvpnscript/main/change-port/port-xray.sh"
-wget -O certv2ray "https://raw.githubusercontent.com/${GitUser}/drgvpnscript/main/cert.sh"
-wget -O trojaan "https://raw.githubusercontent.com/${GitUser}/drgvpnscript/main/menu/trojaan.sh"
-wget -O xraay "https://raw.githubusercontent.com/${GitUser}/drgvpnscript/main/menu/xraay.sh"
+wget -O port-xray "https://raw.githubusercontent.com/${GitUser}/simple/main/change-port/port-xray.sh"
+wget -O certv2ray "https://raw.githubusercontent.com/${GitUser}/simple/main/cert.sh"
+wget -O trojaan "https://raw.githubusercontent.com/${GitUser}/simple/main/menu/trojaan.sh"
+wget -O xraay "https://raw.githubusercontent.com/${GitUser}/simple/main/menu/xraay.sh"
 chmod +x port-xray
 chmod +x certv2ray
 chmod +x trojaan

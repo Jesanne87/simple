@@ -1,5 +1,5 @@
 #wget https://github.com/${GitUser}/
-GitUser="Internetvps"
+GitUser="Jesanne87"
 #IZIN SCRIPT
 MYIP=$(curl -sS ipv4.icanhazip.com)
 # Valid Script
@@ -25,11 +25,11 @@ exit 0
 fi
 clear
 apt install jq curl -y
-DOMAIN=drgvpn-vpn.ovh
+DOMAIN=bt-group.tk
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c4)
-SUB_DOMAIN=${sub}.aquagurl.me
-CF_ID=aquagurl2601@gmail.com
-CF_KEY=14b348d2fd20de44e30e5c02a6ede439d6af8
+SUB_DOMAIN=${sub}.bt-group.tk
+CF_ID=kingthor87@gmail.com
+CF_KEY=d4d89c8dc6d5cbf863551695a3a5326ad5316
 set -euo pipefail
 IP=$(wget -qO- icanhazip.com);
 echo "Updating DNS for ${SUB_DOMAIN}..."

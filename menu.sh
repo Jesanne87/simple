@@ -1,6 +1,6 @@
 #!/bin/bash
 #wget https://github.com/${GitUser}/
-GitUser="Internetvps"
+GitUser="Jesanne87"
 #IZIN SCRIPT
 MYIP=$(curl -sS ipv4.icanhazip.com)
 clear
@@ -165,7 +165,7 @@ echo -e "  \e[$number [•12]\e[m \e[$below•EXIT\e[m"
 echo -e " \e[$line*************************************************************\e[m"
 echo -e "  \e[$below Autoscript By        : DRGVPN"
 echo -e "  \e[$below remode by            : @info_android9"
-echo -e "  \e[$below creadit to OWNER     : PAKYAVPN && V-CODE"
+echo -e "  \e[$below creadit to OWNER     : "
 echo -e " \e[$line*************************************************************\e[m"
 echo -e "  \e[$below[Ctrl + C] keluar-dari-script\e[m"
 echo -e "\e[$below "
