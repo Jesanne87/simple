@@ -15,20 +15,13 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 NC='\033[0;37m'
 # ===================
-echo ''
-clear
-echo ''
-echo "                                                              "
-echo -e "$Lyellow                ⚡ PREMIUM AUTO SCRIPT ⚡"$NC
-echo -e "$green.........................................................."$NC
-echo -e "$Lyellow                  Autoscript By drgvpn"$NC
-echo -e "$Lyellow                    CONTACT TELEGRAM"$NC
-echo -e "$Lyellow                       @info_android9"$NC
-echo -e "$green.........................................................."$NC
-echo ''
-echo -e "$Lyellow                       Tunggu 10 Saat!"$NC
-echo -e "$green.........................................................."$NC
+echo -e "\e[32mloading...\e[0m"
+cho -e "${NC}[ ${green}INFO${NC} ] \e[93mPreparing the install file"
 sleep 6
+echo -e "${NC}[ ${green}INFO${NC} ] \e[93mAlright good ... installation file is ready"
+echo -ne "${NC}[ ${green}INFO${NC} ] \e[93mCheck permission... "
+sleep 2
+
 clear
 if [ "${EUID}" -ne 0 ]; then
 		echo "You need to run this script as root"
@@ -210,9 +203,10 @@ history -c
 echo "$ver" > /home/ver
 clear
 echo " "
-echo "Installation has been completed!!"
+echo -e  "\e[93mInstallation has been completed!!\e[0m"
 echo " "
-echo -e "\e[1;32m══════════════════Autoscript PREMIUM══════════════════\e[0m" | tee -a log-install.txt
+echo -e "\e[1;32m══════════════════ \e[93mAutoscript PREMIUM\e[1;32m ══════════════════\e[0m" | tee -a log-install.txt
+echo ""
 echo ""  | tee -a log-install.txt
 echo "   >>> Service & Port"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
@@ -268,16 +262,15 @@ echo "   - Auto Delete Expired Account" | tee -a log-install.txt
 echo "   - Full Orders For Various Services" | tee -a log-install.txt
 echo "   - White Label" | tee -a log-install.txt
 echo "   - Installation Log --> /root/log-install.txt"  | tee -a log-install.txt
-echo -e "\e[1;32m══════════════════Autoscript By DRGVPN══════════════════\e[0m" | tee -a log-install.txt
-sleep 7
+echo ""
+echo -e "\e[1;32m══════════════════ \e[93mAutoscript By JSphantom\e[1;32m ══════════════════\e[0m" | tee -a log-install.txt
+sleep 5
 clear
 echo ""
-echo -e "    \e[1;32m.------------------------------------------.\e[0m"
-echo -e "    \e[1;32m|     SUCCESFULLY INSTALLED THE SCRIPT     |\e[0m"
-echo -e "    \e[1;32m|         PREMIUM BY INFOANDROID          |\e[0m"
-echo -e "    \e[1;32m'------------------------------------------'\e[0m"
-echo ""
-echo -e "   \e[1;32mYour VPS Will Be Automatical Reboot In 5 seconds\e[0m"
+echo -e "    \e[1;32m╔══════════════════════════════════════════════════════╗\e[0m"
+echo -e "    \e[1;32m║       \e[93m SUCCESFULLY INSTALLED MODED SCRIPT            \e[1;32m║\e[0m"
+echo -e "    \e[1;32m║                  \e[93m BY JsPhantom                       \e[1;32m║\e[0m"
+echo -e "    \e[1;32m╚══════════════════════════════════════════════════════╝\e[0m"
 rm -r setup.sh
 sleep 5
 reboot
