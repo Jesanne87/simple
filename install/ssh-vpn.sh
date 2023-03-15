@@ -278,7 +278,7 @@ wget -O renew-ssh "https://raw.githubusercontent.com/${GitUser}/simple/main/rene
 wget -O autokill "https://raw.githubusercontent.com/${GitUser}/simple/main/autokill.sh"
 wget -O ceklim "https://raw.githubusercontent.com/${GitUser}/simple/main/cek-user/ceklim.sh"
 wget -O tendang "https://raw.githubusercontent.com/${GitUser}/simple/main/tendang.sh"
-wget -O clear-log "https://raw.githubusercontent.com/${GitUser}/simple/main/clear-log.sh"
+wget -O clear-ram "https://raw.githubusercontent.com/${GitUser}/simple/main/clear-ram.sh"
 wget -O change-port "https://raw.githubusercontent.com/${GitUser}/simple/main/change.sh"
 wget -O port-ovpn "https://raw.githubusercontent.com/${GitUser}/simple/main/change-port/port-ovpn.sh"
 wget -O port-ssl "https://raw.githubusercontent.com/${GitUser}/simple/main/change-port/port-ssl.sh"
@@ -327,7 +327,7 @@ chmod +x tendang
 chmod +x ceklim
 chmod +x ram
 chmod +x renew-ssh
-chmod +x clear-log
+chmod +x clear-ram
 chmod +x change-port
 chmod +x restore
 chmod +x port-ovpn
