@@ -286,7 +286,7 @@ wget -O port-squid "https://raw.githubusercontent.com/${GitUser}/simple/main/cha
 wget -O port-websocket "https://raw.githubusercontent.com/${GitUser}/simple/main/change-port/port-websocket.sh"
 #wget -O wbmn "https://raw.githubusercontent.com/${GitUser}/simple/main/webmin.sh"
 wget -O xp "https://raw.githubusercontent.com/${GitUser}/simple/main/xp.sh"
-wget -O kernel-updt "https://raw.githubusercontent.com/${GitUser}/simple/main/kernel.sh"
+#wget -O kernel-updt "https://raw.githubusercontent.com/${GitUser}/simple/main/kernel.sh"
 wget -O user-list "https://raw.githubusercontent.com/${GitUser}/simple/main/more-option/user-list.sh"
 wget -O user-lock "https://raw.githubusercontent.com/${GitUser}/simple/main/more-option/user-lock.sh"
 wget -O user-unlock "https://raw.githubusercontent.com/${GitUser}/simple/main/more-option/user-unlock.sh"
@@ -295,14 +295,14 @@ wget -O antitorrent "https://raw.githubusercontent.com/${GitUser}/simple/main/mo
 wget -O cfa "https://raw.githubusercontent.com/${GitUser}/simple/main/cloud/cfa.sh"
 wget -O cfd "https://raw.githubusercontent.com/${GitUser}/simple/main/cloud/cfd.sh"
 wget -O cfp "https://raw.githubusercontent.com/${GitUser}/simple/main/cloud/cfp.sh"
-wget -O swap "https://raw.githubusercontent.com/${GitUser}/simple/main/swapkvm.sh"
+#wget -O swap "https://raw.githubusercontent.com/${GitUser}/simple/main/swapkvm.sh"
 wget -O check-sc "https://raw.githubusercontent.com/${GitUser}/simple/main/system/running.sh"
 wget -O ssh "https://raw.githubusercontent.com/${GitUser}/simple/main/menu/ssh.sh"
 wget -O autoreboot "https://raw.githubusercontent.com/${GitUser}/simple/main/system/autoreboot.sh"
 #wget -O bbr "https://raw.githubusercontent.com/${GitUser}/simple/main/system/bbr.sh"
 wget -O port-ohp "https://raw.githubusercontent.com/${GitUser}/simple/main/change-port/port-ohp.sh"
 wget -O port-xray "https://raw.githubusercontent.com/${GitUser}/simple/main/change-port/port-xray.sh"
-wget -O panel-domain "https://raw.githubusercontent.com/${GitUser}/simple/main/menu/panel-domain.sh"
+#wget -O panel-domain "https://raw.githubusercontent.com/${GitUser}/simple/main/menu/panel-domain.sh"
 wget -O system "https://raw.githubusercontent.com/${GitUser}/simple/main/menu/system.sh"
 wget -O themes "https://raw.githubusercontent.com/${GitUser}/simple/main/menu/themes.sh"
 wget -O update "https://raw.githubusercontent.com/${GitUser}/simple/main/update/update.sh"
@@ -341,7 +341,7 @@ chmod +x user-list
 chmod +x user-lock
 chmod +x user-unlock
 chmod +x user-password
-chmod +x antitorrent
+#chmod +x antitorrent
 chmod +x cfa
 chmod +x cfd
 chmod +x cfp
@@ -352,7 +352,7 @@ chmod +x autoreboot
 #chmod +x bbr
 chmod +x port-ohp
 chmod +x port-xray
-chmod +x panel-domain
+#chmod +x panel-domain
 chmod +x system
 chmod +x themes
 chmod +x update
