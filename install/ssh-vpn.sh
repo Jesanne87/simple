@@ -261,7 +261,7 @@ netfilter-persistent reload
 
 # // download script
 cd /usr/bin
-wget -O add-host "https://raw.githubusercontent.com/${GitUser}/simple/main/system/add-host.sh"
+#wget -O add-host "https://raw.githubusercontent.com/${GitUser}/simple/main/system/add-host.sh"
 wget -O about "https://raw.githubusercontent.com/${GitUser}/simple/main/system/about.sh"
 wget -O menu "https://raw.githubusercontent.com/${GitUser}/simple/main/menu.sh"
 wget -O add-ssh "https://raw.githubusercontent.com/${GitUser}/simple/main/add-user/add-ssh.sh"
@@ -310,7 +310,7 @@ wget -O run-update "https://raw.githubusercontent.com/${GitUser}/simple/main/upd
 wget -O message-ssh "https://raw.githubusercontent.com/${GitUser}/simple/main/update/message-ssh.sh"
 wget -O dns "https://raw.githubusercontent.com/${GitUser}/simple/main/system/dns.sh"
 wget -O nf "https://raw.githubusercontent.com/${GitUser}/simple/main/system/nf.sh"
-chmod +x add-host
+#chmod +x add-host
 chmod +x menu
 chmod +x add-ssh
 chmod +x trial
@@ -325,7 +325,7 @@ chmod +x about
 chmod +x autokill
 chmod +x tendang
 chmod +x ceklim
-chmod +x ram
+#chmod +x ram
 chmod +x renew-ssh
 chmod +x clean-ram
 chmod +x change-port
@@ -334,9 +334,9 @@ chmod +x port-ovpn
 chmod +x port-ssl
 chmod +x port-squid
 chmod +x port-websocket
-chmod +x wbmn
+#chmod +x wbmn
 chmod +x xp
-chmod +x kernel-updt
+#chmod +x kernel-updt
 chmod +x user-list
 chmod +x user-lock
 chmod +x user-unlock
@@ -345,11 +345,11 @@ chmod +x antitorrent
 chmod +x cfa
 chmod +x cfd
 chmod +x cfp
-chmod +x swap
+#chmod +x swap
 chmod +x check-sc
 chmod +x ssh
 chmod +x autoreboot
-chmod +x bbr
+#chmod +x bbr
 chmod +x port-ohp
 chmod +x port-xray
 chmod +x panel-domain
