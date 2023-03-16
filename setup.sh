@@ -16,6 +16,7 @@ CYAN='\033[0;36m'
 NC='\033[0;37m'
 # ===================
 echo -e " Masak Megi dlu xD "
+sleep 3
 apt install git curl -y >/dev/null 2>&1
 echo -e "\e[32mloading...\e[0m"
 sleep 3
