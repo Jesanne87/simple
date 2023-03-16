@@ -1224,7 +1224,7 @@ echo "47m" > /etc/back
 echo "1;35m" > /etc/number
 echo 3d > /usr/bin/test
 # Banner Name
-echo Premium > /usr/bin/bannerku
+echo Freedom > /usr/bin/bannerku
 echo -e "Succesfully Set Default Theme."
 echo -e "\e[0;32mDone\e[0m"
 sleep 0.5
