@@ -15,12 +15,14 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 NC='\033[0;37m'
 # ===================
+apt install git curl -y >/dev/null 2>&1
 echo -e "\e[32mloading...\e[0m"
-cho -e "${NC}[ ${green}INFO${NC} ] \e[93mPreparing the install file"
+sleep 3
+echo -e "${NC}[ ${green}INFO${NC} ] \e[93mPreparing the install file"
 echo -e "${NC}[ ${green}INFO${NC} ] \e[93mAlright good ... installation file is ready"
+sleep 2
 echo -ne "${NC}[ ${green}INFO${NC} ] \e[93mCheck permission... "
-sleep 6
-
+sleep 3
 clear
 if [ "${EUID}" -ne 0 ]; then
 		echo "You need to run this script as root"
