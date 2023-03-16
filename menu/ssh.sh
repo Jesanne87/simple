@@ -1,32 +1,6 @@
+#!/bin/bash
 #wget https://github.com/${GitUser}/
 GitUser="Jesanne87"
-#IZIN SCRIPT
-MYIP=$(curl -sS ipv4.icanhazip.com)
-echo -e "\e[32mloading...\e[0m"
-clear
-# Valid Script
-VALIDITY () {
-    today=`date -d "0 days" +"%Y-%m-%d"`
-    Exp1=$(curl https://raw.githubusercontent.com/${GitUser}/allow/main/ipvps.conf | grep $MYIP | awk '{print $4}')
-    if [[ $today < $Exp1 ]]; then
-    echo -e "\e[32mYOUR SCRIPT ACTIVE..\e[0m"
-    else
-    echo -e "\e[31mYOUR SCRIPT HAS EXPIRED!\e[0m";
-    echo -e "\e[31mPlease renew your ipvps first\e[0m"
-    exit 0
-fi
-}
-IZIN=$(curl https://raw.githubusercontent.com/${GitUser}/allow/main/ipvps.conf | awk '{print $5}' | grep $MYIP)
-if [ $MYIP = $IZIN ]; then
-echo -e "\e[32mPermission Accepted...\e[0m"
-VALIDITY
-else
-echo -e "\e[31mPermission Denied!\e[0m";
-echo -e "\e[31mPlease buy script first\e[0m"
-exit 0
-fi
-echo -e "\e[32mloading...\e[0m"
-clear
 # LINE COLOUR
 line=$(cat /etc/line)
 # TEXT COLOUR BELOW
@@ -42,31 +16,30 @@ red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- ifconfig.me/ip);
+export YLW='\033[0;33m'
 
 echo -e ""
-echo -e "   \e[$line══════════════════════════════════════════\e[m"
-echo -e "   \e[$back_text         \e[30m═[\e[$box SSH & OpenVPN Menu\e[30m ]═         \e[m"
-echo -e "   \e[$line══════════════════════════════════════════\e[m"
-echo -e "    \e[$number (•1)\e[m \e[$below Create SSH & OpenVPN Account\e[m"
-echo -e "    \e[$number (•2)\e[m \e[$below Trial Account SSH & OpenVPN\e[m"
-echo -e "    \e[$number (•3)\e[m \e[$below Renew SSH & OpenVPN Account\e[m"
-echo -e "    \e[$number (•4)\e[m \e[$below Delete SSH & OpenVPN Account\e[m"
-echo -e "    \e[$number (•5)\e[m \e[$below Check User Login SSH & OpenVPN\e[m"
-echo -e "    \e[$number (•6)\e[m \e[$below List Member SSH & OpenVPN\e[m"
-echo -e "    \e[$number (•7)\e[m \e[$below Delete User Expired SSH & OpenVPN\e[m"
-echo -e "    \e[$number (•8)\e[m \e[$below Set up Autokill SSH\e[m"
-echo -e "    \e[$number (•9)\e[m \e[$below Cek Users Who Do Multi Login SSH\e[m"
-echo -e "    \e[$number (10)\e[m \e[$below User List\e[m"
-echo -e "    \e[$number (11)\e[m \e[$below User Lock\e[m"
-echo -e "    \e[$number (12)\e[m \e[$below User Unlock\e[m"
-echo -e "    \e[$number (13)\e[m \e[$below User Password\e[m"
-echo -e "    \e[$number (14)\e[m \e[$below Restart Service Dropbear, Squid3,\e[m"
-echo -e "          \e[$below OpenVPN & SSH\e[m"
+echo -e "   \e[$line┌──────────────────────────────────────────────────────┐\e[m"
+echo -e "   \e[$line│                  \e[$box SSH & OpenVPN Menu                 \e[$line│\e[m"
+echo -e "   \e[$line└──────────────────────────────────────────────────────┘\e[m"
+echo -e "      [\e[$number 01${NC}]${YLW} • Create SSH & OpenVPN Account\e[m"
+echo -e "      [\e[$number 02${NC}]${YLW} • Trial Account SSH & OpenVPN\e[m"
+echo -e "      [\e[$number 03${NC}]${YLW} • Renew SSH & OpenVPN Account\e[m"
+echo -e "      [\e[$number 04${NC}]${YLW} • Delete SSH & OpenVPN Account\e[m"
+echo -e "      [\e[$number 05${NC}]${YLW} • Check User Login SSH & OpenVPN\e[m"
+echo -e "      [\e[$number 06${NC}]${YLW} • List Member SSH & OpenVPN\e[m"
+echo -e "      [\e[$number 07${NC}]${YLW} • Delete User Expired SSH & OpenVPN\e[m"
+echo -e "      [\e[$number 08${NC}]${YLW} • Set up Autokill SSH\e[m"
+echo -e "      [\e[$number 09${NC}]${YLW} • Cek Users Who Do Multi Login SSH\e[m"
+echo -e "      [\e[$number 10${NC}]${YLW} • User List\e[m"
+echo -e "      [\e[$number 11${NC}]${YLW} • User Lock\e[m"
+echo -e "      [\e[$number 12${NC}]${YLW} • User Unlock\e[m"
+echo -e "      [\e[$number 13${NC}]${YLW} • User Password\e[m"
+echo -e "      [\e[$number 14${NC}]${YLW} • Restart Service Dropbear, Squid3,\e[m"
+echo -e "              ${YLW} OpenVPN & SSH\e[m"
 echo -e ""
-echo -e "   \e[$line══════════════════════════════════════════\e[m"
-echo -e "   \e[$back_text \e[$box x)   MENU                               \e[m"
-echo -e "   \e[$line══════════════════════════════════════════\e[m"
-echo -e "\e[$line"
+echo -e "              Press [ x ] To Go Main Menu "
+echo -e " "
 read -p "       Please Input Number  [1-14 or x] :  "  ssh
 echo -e ""
 case $ssh in
@@ -117,5 +90,7 @@ menu
 ;;
 *)
 echo "Please enter an correct number"
+sleep 1
+ssh
 ;;
 esac
