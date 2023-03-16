@@ -27,7 +27,7 @@ clear
 apt install jq curl -y
 DOMAIN=bt-group.tk
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c4)
-SUB_DOMAIN=${sub}.bt-group.tk
+SUB_DOMAIN=phantom-${sub}.bt-group.tk
 CF_ID=kingthor87@gmail.com
 CF_KEY=d4d89c8dc6d5cbf863551695a3a5326ad5316
 set -euo pipefail
@@ -59,4 +59,5 @@ RESULT=$(curl -sLX PUT "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_r
 echo "Host : $SUB_DOMAIN"
 echo "IP=" >> /var/lib/premium-script/ipvps.conf
 echo $SUB_DOMAIN > /root/domain
+echo $SUB_DOMAIN > /usr/local/etc/xray/domain
 rm -f /root/cf.sh
