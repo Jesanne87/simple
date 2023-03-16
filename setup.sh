@@ -17,10 +17,9 @@ NC='\033[0;37m'
 # ===================
 echo -e "\e[32mloading...\e[0m"
 cho -e "${NC}[ ${green}INFO${NC} ] \e[93mPreparing the install file"
-sleep 6
 echo -e "${NC}[ ${green}INFO${NC} ] \e[93mAlright good ... installation file is ready"
 echo -ne "${NC}[ ${green}INFO${NC} ] \e[93mCheck permission... "
-sleep 2
+sleep 6
 
 clear
 if [ "${EUID}" -ne 0 ]; then
