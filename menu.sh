@@ -7,8 +7,8 @@ MYIP=$(curl -sS ipv4.icanhazip.com)
 #Domain
 domain=$(cat /usr/local/etc/xray/domain)
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10)
-#CITY=$(curl -s ipinfo.io/city)
-#WKT=$(curl -s ipinfo.io/timezone)
+CITY=$(curl -s ipinfo.io/city)
+WKT=$(curl -s ipinfo.io/timezone)
 IPVPS=$(curl -s ipinfo.io/ip)
 cname=$(awk -F: '/model name/ {name=$2} END {print name}' /proc/cpuinfo)
 cores=$(awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo)
@@ -147,7 +147,7 @@ echo -e " ${YLW}  PROVIDED BY		  : ${YLW}$creditt${NC}"
 echo -e " ${YLW}  EXPIRED STATUS         : ${NC}$exp $sts${NC}"
 echo -e " ${YLW}  SCRIPT VERSION	  : ${NC}$stl${NC}"
 echo -e " ${YLW}  CPU USAGE		  : ${NC}$cpu_usage${NC}"
-echo -e " ${YLW}  MEMORY USAGE           : ${NC}$uramMB / $tramMB${NC}"
+echo -e " ${YLW}  MEMORY USAGE           : ${NC}$uram MB / $tram MB${NC}"
 echo -e " ${YLW}  BANDWIDTH DATA USAGE	  : ${WH}$ttoday Daily/${YLW}$tmon Monthly${NC}"
 echo -e " \e[$line ┌──────────────────────────────────────────────────────┐${NC}"
 echo -e "   ${WH}Ssh/Ovpn  V2ray  Vless  Vlessxtls   Troj-Ws   Troj-Tls${NC}"
@@ -157,12 +157,11 @@ echo -e " \e[$line ┌───────────────────�
 echo -e " \e[$line │\e[$box               ───[ SERVER MENU ]───                  \e[$line│${NC}"
 echo -e " \e[$line └──────────────────────────────────────────────────────┘${NC}"
 echo -e "  "
-echo -e "    [\e[$number 01${NC}]${YLW} • Xray Vmess & Vless ${NC}      [\e[$number 07${NC}]${YLW} • Reboot ${NC}"
-echo -e "    [\e[$number 02${NC}]${YLW} • Trojan Xray & WS ${NC}        [\e[$number 08${NC}]${YLW} • Themes ${NC}"
-echo -e "    [\e[$number 03${NC}]${YLW} • SSH & OPENVPN  ${NC}          [\e[$number 09${NC}]${YLW} • Add IP ${NC}"
-echo -e "    [\e[$number 04${NC}]${YLW} • System Menu ${NC}             [\e[$number 10${NC}]${YLW} • About Script ${NC}"
-echo -e "    [\e[$number 05${NC}]${YLW} • Check Running ${NC}           [\e[$number 11${NC}]${YLW} • RAM Cleaner ${NC}"
-echo -e "    [\e[$number 06${NC}]${YLW} • Change Port ${NC}             [\e[$number 12${NC}]${YLW} • Exit ${NC}"
+echo -e "    [\e[$number 01${NC}]${YLW} • Xray Vmess & Vless ${NC}    [\e[$number 06${NC}]${YLW} • Reboot ${NC}"
+echo -e "    [\e[$number 02${NC}]${YLW} • Trojan Xray & WS ${NC}      [\e[$number 07${NC}]${YLW} • Themes ${NC}"
+echo -e "    [\e[$number 03${NC}]${YLW} • SSH & OPENVPN  ${NC}        [\e[$number 08${NC}]${YLW} • Change Port ${NC}"
+echo -e "    [\e[$number 04${NC}]${YLW} • System Menu ${NC}           [\e[$number 09${NC}]${YLW} • About Script ${NC}"
+echo -e "    [\e[$number 05${NC}]${YLW} • Check Running ${NC}         [\e[$number 10${NC}]${YLW} • RAM Cleaner ${NC}"                
 echo -e " "
 echo -e " \e[$line ┌──────────────────────────────────────────────────────┐${NC}"
 echo -e " \e[$line │\e[$box   •••───[ Moded Script By JsPhantom @ 2023 ]───•••   \e[$line│${NC}"
@@ -188,27 +187,19 @@ case $menu in
     check-sc
     ;;
 6 | 06 )
-    change-port
-    ;;
-7 | 07 )
     reboot
     ;;
-8 | 08 )
+7 | 07 )
     themes
     ;;
-9 | 09 )
-    addip
+8 | 08 )
+    change-port
     ;;
-10)
+9 | 09 )
     about
     ;;
-11)
+10)
     clean-ram
-    ;;
-x)
-    clear
-    exit
-    echo -e "\e[1;31mPlease Type menu For More Option, Thank You\e[0m"
     ;;
 *)
     clear
