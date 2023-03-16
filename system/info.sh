@@ -5,25 +5,83 @@ GitUser="Jesanne87"
 MYIP=$(curl -sS ipv4.icanhazip.com)
 echo -e "\e[32mloading...\e[0m"
 clear
-yl='\e[031;1m'
-bl='\e[36;1m'
-gl='\e[32;1m'
+# Color Validation
+Lred='\e[1;91m'
+Lgreen='\e[92m'
+Lyellow='\e[93m'
+green='\e[32m'
+RED='\033[0;31m'
+NC='\033[0m'
+BGBLUE='\e[1;44m'
+ORANGE='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0;37m'
+red='\e[1;31m'
+green='\e[0;32m'
+NC='\e[0m'
 clear
-yl='\e[031;1m'
-bl='\e[36;1m'
-gl='\e[32;1m'
-clear
+echo -e "\e[1;32m══════════════════ \e[93mAutoscript PREMIUM\e[1;32m ══════════════════\e[0m" | tee -a log-install.txt
 echo ""
-figlet " SCRIPT" | lolcat
-figlet " BY drgvpn" | lolcat
-echo -e "\e[32;1m.-----------------------------------------------.\e[0m"
-echo -e "\e[32;1m|               \e[36;1mINFO SCRIPT VPS\e[0m                 \e[32;1m|\e[0m"
-echo -e "\e[32;1m'-----------------------------------------------'\e[0m"
-echo -e "           \e[031;1m> Premium Script By drgvpn <\e[0m" | lolcat
-echo -e " \e[0;32m_______________________________________________\e[0m"
-echo -e "\e[0;32m|    \e[1;35mFor OS Debian 10 & Ubuntu 20.04 64 bit     \e[0;32m|\e[0m"
-echo -e "\e[0;32m|  \e[1;35mFor VPS with KVM and VMWare drgvpn         \e[0;32m|\e[0m"
-echo -e "\e[0;32m|               \e[1;35mI HOPE YOU HAPPY                \e[0;32m|\e[0m"
-echo -e "\e[0;32m|_______________________________________________\e[0;32m|\e[0m"
-echo -e "\e[0;32m|_______________\e[36;1mTHANKYOU SUPPORT\e[0m\e[0;32m________________|\e[0m"
-echo -e "               \e[0;32m'----------------'\e[0m"
+echo ""  | tee -a log-install.txt
+echo "   >>> Service & Port"  | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "    [INFORMASI SSH & OpenVPN]" | tee -a log-install.txt
+echo "    -------------------------" | tee -a log-install.txt
+echo "   - OpenSSH                 : 22"  | tee -a log-install.txt
+echo "   - OpenVPN                 : TCP 1194, UDP 2200"  | tee -a log-install.txt
+echo "   - OpenVPN SSL             : 110"  | tee -a log-install.txt
+echo "   - Stunnel4                : 222, 777"  | tee -a log-install.txt
+echo "   - Dropbear                : 143, 109"  | tee -a log-install.txt
+echo "   - OHP Dropbear            : 8585"  | tee -a log-install.txt
+echo "   - OHP SSH                 : 8686"  | tee -a log-install.txt
+echo "   - OHP OpenVPN             : 8787"  | tee -a log-install.txt
+echo "   - Websocket SSH(HTTP)     : 80"  | tee -a log-install.txt
+echo "   - Websocket SSL(HTTPS)    : 443, 2096"  | tee -a log-install.txt
+echo "   - Websocket OpenVPN       : 2097"  | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "    [INFORMASI Sqd, Bdvp, Ngnx]" | tee -a log-install.txt
+echo "    ---------------------------" | tee -a log-install.txt
+echo "   - Squid Proxy             : 3128, 8000 (limit to IP Server)"  | tee -a log-install.txt
+echo "   - Badvpn                  : 7100, 7200, 7300"  | tee -a log-install.txt
+echo "   - Nginx                   : 81"  | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "    [INFORMASI XRAY]"  | tee -a log-install.txt
+echo "    ----------------" | tee -a log-install.txt
+echo "   - Xray Vmess Ws Tls       : 443"  | tee -a log-install.txt
+echo "   - Xray Vless Ws Tls       : 443"  | tee -a log-install.txt
+echo "   - Xray Trojan Ws Tls      : 443"  | tee -a log-install.txt
+echo "   - Xray Vless Tcp Xtls     : 443"  | tee -a log-install.txt
+echo "   - Xray Trojan Tcp Tls     : 443"  | tee -a log-install.txt
+echo "   - Xray Vmess Ws None Tls  : 80"  | tee -a log-install.txt
+echo "   - Xray Vless Ws None Tls  : 80"  | tee -a log-install.txt
+echo "   - Xray Trojan Ws None Tls : 80"  | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "    [INFORMASI CLASH FOR ANDROID (YAML)]"  | tee -a log-install.txt
+echo "    -----------------------------------" | tee -a log-install.txt
+echo "   - Xray Vmess Ws Yaml      : Yes"  | tee -a log-install.txt
+echo "   - Xray Vless Ws Yaml      : Yes"  | tee -a log-install.txt
+echo "   - Xray Trojan Ws Yaml     : Yes"  | tee -a log-install.txt
+echo "   --------------------------------------------------------------" | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "   >>> Server Information & Other Features"  | tee -a log-install.txt
+echo "   - Timezone                : Asia/Kuala_Lumpur (GMT +8)"  | tee -a log-install.txt
+echo "   - Fail2Ban                : [ON]"  | tee -a log-install.txt
+echo "   - Dflate                  : [ON]"  | tee -a log-install.txt
+echo "   - IPtables                : [ON]"  | tee -a log-install.txt
+echo "   - Auto-Reboot             : [ON]"  | tee -a log-install.txt
+echo "   - IPv6                    : [OFF]"  | tee -a log-install.txt
+echo "   - Autoreboot On 05.00 GMT +8" | tee -a log-install.txt
+echo "   - Autobackup Data" | tee -a log-install.txt
+echo "   - Restore Data" | tee -a log-install.txt
+echo "   - Auto Delete Expired Account" | tee -a log-install.txt
+echo "   - Full Orders For Various Services" | tee -a log-install.txt
+echo "   - White Label" | tee -a log-install.txt
+echo "   - Installation Log --> /root/log-install.txt"  | tee -a log-install.txt
+echo ""
+echo -e "\e[1;32m══════════════════ \e[93mAutoscript By JSphantom\e[1;32m ══════════════════\e[0m" | tee -a log-install.txt
+echo ""
+read -n1 -r -p "                Press any key to continue..."
+    sleep 1
+    system
