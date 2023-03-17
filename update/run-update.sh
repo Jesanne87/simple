@@ -38,7 +38,7 @@ sts="${Error}"
 fi
 clear
 echo -e "\e[$line┌──────────────────────────────────────────────────────┐\e[m"
-echo -e "\e[$line│                 \e[$box CHECK NEW UPDATE\e[30m                  \e[$line│\e[m"
+echo -e "\e[$line│                 \e[$box CHECK NEW UPDATE\e[30m                    \e[$line│\e[m"
 echo -e "\e[$line└──────────────────────────────────────────────────────┘\e[m"
 echo -e "\e[$below VERSION NOW >> $Info1"
 echo -e "\e[$below STATUS UPDATE >> $sts"
@@ -167,7 +167,7 @@ system
 *)
 clear
 echo -e "\e[1;31mPlease Enter Option 1-2 or x & y Only..,Try again, Thank You..\e[0m"
-sleep 2
+sleep 1
 run-update
 ;;
 esac
