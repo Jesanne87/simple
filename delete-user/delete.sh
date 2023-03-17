@@ -29,7 +29,7 @@ echo -e "\e[32mloading...\e[0m"
 clear
                hariini=`date +%d-%m-%Y`
                echo "Thank you for removing the EXPIRED USERS"
-               echo "--------------------------------------"
+               echo "•───────────────────────────────────────•"
                cat /etc/shadow | cut -d: -f1,8 | sed /:$/d > /tmp/expirelist.txt
                totalaccounts=`cat /tmp/expirelist.txt | wc -l`
                for((i=1; i<=$totalaccounts; i++ ))
@@ -61,5 +61,8 @@ clear
                fi
                done
                echo " "
-               echo "--------------------------------------"
+               echo "•───────────────────────────────────────•"
                echo "Script are successfully run"
+               read -n1 -r -p "Press any key to continue..."
+    sleep 1
+    ssh
