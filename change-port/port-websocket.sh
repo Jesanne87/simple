@@ -3,6 +3,16 @@ GitUser="Jesanne87"
 #IZIN SCRIPT
 MYIP=$(curl -sS ipv4.icanhazip.com)
 echo -e "\e[32mloading...\e[0m"
+# LINE COLOUR
+line=$(cat /etc/line)
+# TEXT COLOUR BELOW
+below=$(cat /etc/below)
+# BACKGROUND TEXT COLOUR
+back_text=$(cat /etc/back)
+# NUMBER COLOUR
+number=$(cat /etc/number)
+# TEXT ON BOX COLOUR
+box=$(cat /etc/box)
 clear
 # Valid Script
 VALIDITY () {
@@ -31,14 +41,13 @@ ssl2="$(cat /etc/stunnel/stunnel.conf | grep -i accept | head -n 2 | cut -d= -f2
 wsdropbear="$(cat ~/log-install.txt | grep -w "SSH(HTTP)" | cut -d: -f2|sed 's/ //g')"
 wsstunnel="$(cat ~/log-install.txt | grep -w "SSL(HTTPS)" | cut -d: -f2|sed 's/ //g')"
 wsovpn="$(cat ~/log-install.txt | grep -w "Websocket OpenVPN" | cut -d: -f2|sed 's/ //g')"
-echo -e "\e[0;31m.-----------------------------------------.\e[0m"
-echo -e "\e[0;31m|      \e[0;36mCHANGE PORT WEBSOCKET OPENSSH\e[m      \e[0;31m|\e[0m"
-echo -e "\e[0;31m'-----------------------------------------'\e[0m"
-echo -e " \e[1;31m>>\e[0m\e[1;33mChange Port For SSH & OVPN WS:\e[0m"
-echo -e "     [1]  Change Port Websocket SSH(HTTP) $wsdropbear"
-echo -e "     [2]  Change Port Websocket SSL(HTTPS) $wsstunnel"
-echo -e "     [3]  Change Port Websocket OpenVPN $wsovpn"
-echo -e "======================================"
+echo -e "\e[$line┌──────────────────────────────────────────────────────┐\e[m"
+echo -e "\e[$line│            \e[$box CHANGE PORT WEBSOCKET OPENSSH\e[30m            \e[$line│\e[m"
+echo -e "\e[$line└──────────────────────────────────────────────────────┘\e[m"
+echo -e "  [\e[$number 01${NC}]\e[$below • Change Port Websocket SSH(HTTP) $wsdropbear\e[m"
+echo -e "  [\e[$number 02${NC}]\e[$below • Change Port Websocket SSL(HTTPS) $wsstunnel\e[m"
+echo -e "  [\e[$number 03${NC}]\e[$below • Change Port Websocket OpenVPN $wsovpn\e[m"
+echo -e ""
 echo -e "     [x]  Back To Menu Change Port"
 echo -e "     [y]  Go To Main Menu"
 echo -e ""
@@ -148,5 +157,7 @@ menu
 ;;
 *)
 echo "Please enter an correct number"
+sleep 1
+port-websocket
 ;;
 esac
