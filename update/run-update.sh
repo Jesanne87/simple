@@ -29,10 +29,10 @@ Info1="${Green_font_prefix}($version)${Font_color_suffix}"
 Info2="${Green_font_prefix}(LATEST VERSION)${Font_color_suffix}"
 Error="Version ${Green_font_prefix}[$ver]${Font_color_suffix} available${Red_font_prefix}[Please Update]${Font_color_suffix}"
 #Status Version
-if [ $version = $ver ]; then
-sts="${Info1}"
-else
+if [[ $version < $ver ]]; then
 sts="${Error}"
+else
+sts="${Info2}"
 fi
 clear
 echo -e "\e[$line┌──────────────────────────────────────────────────────┐\e[m"
@@ -48,9 +48,8 @@ echo -e "[\e[$number 01${NC}]\e[$below • Check Script Update Now\e[m"
 echo -e "[\e[$number 02${NC}]\e[$below • Back To Update Menu\e[m"
 echo -e "[\e[$number 03${NC}]\e[$below • Back To Main Menu\e[m"
 echo -e ""
-echo -e "\e[$line--------------------------------------------------------\e[m"
 echo -e "\e[$line"
-read -p "Please Choose 1 or x & y : " option2
+read -p "Please Choose 1-3 : " option2
 case $option2 in
 1)
 version=$(cat /home/ver)
