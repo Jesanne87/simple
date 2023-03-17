@@ -18,14 +18,14 @@ apt update -y && apt upgrade -y && apt dist-upgrade -y && reboot
 
   ```
 
-ROot
+Root Access
 ```html
-wget https://raw.githubusercontent.com/Jesanne/VPS-access-root/main/rootpass.sh && ./root7.sh
+wget https://raw.githubusercontent.com/Jesanne87/Root-Access/main/rootpass.sh && chmod +x rootpass.sh && ./rootpass.sh
  ```
  
 ## INSTALLATION SCRIPT
 
-  ```html
-  sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl && wget https://raw.githubusercontent.com/Jesanne87/simple/main/setup.sh && chmod +x setup.sh && sed -i -e 's/\r$//' setup.sh && screen -S setup ./setup.sh
+ ```html
+sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl && wget https://raw.githubusercontent.com/Jesanne87/simple/main/setup.sh && chmod +x setup.sh && sed -i -e 's/\r$//' setup.sh && screen -S setup ./setup.sh
 
-  ```
+ ```
