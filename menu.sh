@@ -40,7 +40,7 @@ version=$(cat /home/ver)
 ver=$( curl https://raw.githubusercontent.com/${GitUser}/version/main/version.conf )
 clear
 # CEK UPDATE
-# Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
+Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
 Info1="${Green_font_prefix}$version${Font_color_suffix}"
 Info2="${Green_font_prefix}(LATEST VERSION)${Font_color_suffix}"
 Error="Version ${Green_font_prefix}[$ver]${Font_color_suffix} available${Red_font_prefix}[Please Update]${Font_color_suffix}"
@@ -147,7 +147,7 @@ echo -e " ${YLW}  PROVIDED BY		  : ${YLW}$creditt${NC}"
 echo -e " ${YLW}  EXPIRED STATUS         : ${NC}$exp $sts${NC}"
 echo -e " ${YLW}  SCRIPT VERSION	  : ${NC}$stl${NC}"
 echo -e " ${YLW}  CPU USAGE		  : ${NC}$cpu_usage${NC}"
-echo -e " ${YLW}  MEMORY USAGE           : ${NC}$uram MB / $tram MB${NC}"
+echo -e " ${YLW}  MEMORY USAGE           : ${NC}$uram MB/$tram MB${NC}"
 echo -e " ${YLW}  BANDWIDTH DATA USAGE	  : ${WH}$ttoday Daily/${YLW}$tmon Monthly${NC}"
 echo -e " \e[$line ┌──────────────────────────────────────────────────────┐${NC}"
 echo -e "   ${WH}Ssh/Ovpn  V2ray  Vless  Vlessxtls   Troj-Ws   Troj-Tls${NC}"
