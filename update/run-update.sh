@@ -50,7 +50,7 @@ echo -e "[\e[$number 03${NC}]\e[$below • Back To Main Menu\e[m"
 echo -e ""
 echo -e "\e[$line--------------------------------------------------------\e[m"
 echo -e "\e[$line"
-read -p "Please Choose 1 or x & y : " option2
+read -p "Please Choose 1-3 : " option2
 case $option2 in
 1)
 version=$(cat /home/ver)
