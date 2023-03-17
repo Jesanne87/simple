@@ -261,7 +261,7 @@ netfilter-persistent reload
 
 # // download script
 cd /usr/bin
-#wget -O add-host "https://raw.githubusercontent.com/${GitUser}/simple/main/system/add-host.sh"
+wget -O add-host "https://raw.githubusercontent.com/${GitUser}/simple/main/system/add-host.sh"
 wget -O about "https://raw.githubusercontent.com/${GitUser}/simple/main/system/about.sh"
 wget -O menu "https://raw.githubusercontent.com/${GitUser}/simple/main/menu.sh"
 wget -O add-ssh "https://raw.githubusercontent.com/${GitUser}/simple/main/add-user/add-ssh.sh"
@@ -310,7 +310,7 @@ wget -O run-update "https://raw.githubusercontent.com/${GitUser}/simple/main/upd
 wget -O message-ssh "https://raw.githubusercontent.com/${GitUser}/simple/main/update/message-ssh.sh"
 wget -O dns "https://raw.githubusercontent.com/${GitUser}/simple/main/system/dns.sh"
 wget -O nf "https://raw.githubusercontent.com/${GitUser}/simple/main/system/nf.sh"
-#chmod +x add-host
+chmod +x add-host
 chmod +x menu
 chmod +x add-ssh
 chmod +x trial
