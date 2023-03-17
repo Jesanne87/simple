@@ -1,55 +1,52 @@
-#wget https://github.com/${GitUser}/
-GitUser="Jesanne87"
-#IZIN SCRIPT
-MYIP=$(curl -sS ipv4.icanhazip.com)
-echo -e "\e[32mloading...\e[0m"
+#!/bin/bash
+# =========================================
+# Quick Setup | Script Setup Manager
+# Edition : Stable Edition V1.0
+# Auther  : JsPhantom
+# (C) Copyright 2023
+# =========================================
+red='\e[1;31m'
+green='\e[0;32m'
+purple='\e[0;35m'
+orange='\e[0;33m'
+NC='\e[0m'
 clear
-# Valid Script
-VALIDITY () {
-    today=`date -d "0 days" +"%Y-%m-%d"`
-    Exp1=$(curl https://raw.githubusercontent.com/${GitUser}/allow/main/ipvps.conf | grep $MYIP | awk '{print $4}')
-    if [[ $today < $Exp1 ]]; then
-    echo -e "\e[32mYOUR SCRIPT ACTIVE..\e[0m"
-    else
-    echo -e "\e[31mYOUR SCRIPT HAS EXPIRED!\e[0m";
-    echo -e "\e[31mPlease renew your ipvps first\e[0m"
-    exit 0
-fi
-}
-IZIN=$(curl https://raw.githubusercontent.com/${GitUser}/allow/main/ipvps.conf | awk '{print $5}' | grep $MYIP)
-if [ $MYIP = $IZIN ]; then
-echo -e "\e[32mPermission Accepted...\e[0m"
-VALIDITY
-else
-echo -e "\e[31mPermission Denied!\e[0m";
-echo -e "\e[31mPlease buy script first\e[0m"
-exit 0
-fi
-echo -e "\e[32mloading...\e[0m"
-clear
-echo "This Feature Can Only Be Used According To Vps Data With This Autoscript"
-echo "Please input link to your vps data backup file."
-echo "You can check it on your email if you run backup data vps before."
-read -rp "Link File: " -e url
+echo ""
+echo " This Feature Can Only Be Used According To VPS Data With This Autoscript"
+echo " Please Insert VPS Data Backup Link To Restore The Data"
+echo ""
+read -rp " Password File: " -e InputPass
+read -rp " Link File: " -e url
 wget -O backup.zip "$url"
-unzip backup.zip
+unzip -P $InputPass /root/backup.zip &> /dev/null
 rm -f backup.zip
 sleep 1
-echo Start Restore
-cd /root/backup
-cp passwd /etc/
-cp group /etc/
-cp shadow /etc/
-cp gshadow /etc/
-cp -r wireguard /etc/
-cp ss.conf /etc/shadowsocks-libev/ss.conf
-cp -r premium-script /var/lib/
-cp -r xray /usr/local/etc/
-cp -r trojan-go /etc/
-cp -r shadowsocksr /usr/local/
-cp -r public_html /home/vps/
-cp crontab /etc/
-strt
+echo -e "[ ${green}INFO${NC} ] Start Restore . . . "
+#cp -r /root/backup/.acme.sh /root/ &> /dev/null
+#cp -r /root/backup/premium-script /var/lib/ &> /dev/null
+#cp -r /root/backup/xray /usr/local/etc/ &> /dev/null
+#cp -r /root/backup/*.json /etc/xray/ >/dev/null
+cp -r /root/backup/public_html /home/vps/ &> /dev/null
+cp -r /root/backup/crontab /etc/ &> /dev/null
+cp -r /root/backup/cron.d /etc/ &> /dev/null
 rm -rf /root/backup
 rm -f backup.zip
-echo Done
+echo ""
+echo -e "[ ${green}INFO${NC} ] VPS Data Restore Complete !"
+echo ""
+echo -e "[ ${green}INFO${NC} ] Restart All Service"
+systemctl restart nginx
+systemctl restart xray.service
+systemctl restart xray@none.service
+systemctl restart xray@vless.service
+systemctl restart xray@vnone.service
+systemctl restart xray@trojanws.service
+systemctl restart xray@trnone.service
+systemctl restart xray@xtrojan.service
+systemctl restart xray@trojan.service
+service cron restart
+sleep 1.5
+echo ""
+read -n 1 -s -r -p "Press any key to back on menu"
+sleep 1
+system
