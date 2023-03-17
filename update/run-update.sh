@@ -89,7 +89,7 @@ echo -e "\e[0;32mNew Version Downloading started!\e[0m"
 sleep 2
 cd /usr/bin
 wget -O update "https://raw.githubusercontent.com/${GitUser}/simple/main/update/update.sh"
-wget -O run-update "https://raw.githubusercontent.com/${GitUser}/simple/main/update/run-update.sh"
+wget -O run-update "https://raw.githubusercontent.com/Jesanne87/simple/main/update/run-update.sh"
 wget -O message-ssh "https://raw.githubusercontent.com/${GitUser}/simple/main/update/message-ssh.sh"
 wget -O change-port "https://raw.githubusercontent.com/${GitUser}/simple/main/change.sh"
 wget -O system "https://raw.githubusercontent.com/${GitUser}/simple/main/menu/system.sh"
