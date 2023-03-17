@@ -45,10 +45,10 @@ Info1="${Green_font_prefix}$version${Font_color_suffix}"
 Info2="${Green_font_prefix}(LATEST VERSION)${Font_color_suffix}"
 Error="Version ${Green_font_prefix}[$ver]${Font_color_suffix} available${Red_font_prefix}[Please Update]${Font_color_suffix}"
 #Status Version
-if [ $version > $ver ]; then
+if [[ $version < $ver ]]; then
 stl="${Error}"
 else
-stl="${Info1}"
+stl="${Info2}"
 fi
 #!/bin/bash
 #wget https://github.com/${GitUser}/
