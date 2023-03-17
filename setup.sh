@@ -264,7 +264,7 @@ echo "   - Full Orders For Various Services" | tee -a log-install.txt
 echo "   - White Label" | tee -a log-install.txt
 echo "   - Installation Log --> /root/log-install.txt"  | tee -a log-install.txt
 echo ""
-echo -e "\e[1;32m══════════════════ \e[93mAutoscript By JSphantom\e[1;32m ══════════════════\e[0m" | tee -a log-install.txt
+echo -e "\e[1;32m══════════════════ \e[93mAutoscript Moded By JSphantom\e[1;32m ══════════════════\e[0m" | tee -a log-install.txt
 sleep 5
 clear
 echo ""
