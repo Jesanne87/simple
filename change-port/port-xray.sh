@@ -5,7 +5,16 @@ GitUser="Jesanne87"
 MYIP=$(curl -sS ipv4.icanhazip.com)
 export RED='\033[0;31m';
 export NC='\033[0m';
-
+# LINE COLOUR
+line=$(cat /etc/line)
+# TEXT COLOUR BELOW
+below=$(cat /etc/below)
+# BACKGROUND TEXT COLOUR
+back_text=$(cat /etc/back)
+# NUMBER COLOUR
+number=$(cat /etc/number)
+# TEXT ON BOX COLOUR
+box=$(cat /etc/box)
 # // Valid Script
 VALIDITY () {
     clear
@@ -32,13 +41,12 @@ fi
 tls="$(cat ~/log-install.txt | grep -w "Vmess Ws Tls" | cut -d: -f2|sed 's/ //g')"
 none="$(cat ~/log-install.txt | grep -w "Vmess Ws None Tls" | cut -d: -f2|sed 's/ //g')"
 clear
-echo -e "\e[0;34m.-----------------------------------------.\e[0m"
-echo -e "\e[0;34m|             \e[1;33mCHANGE PORT XRAY\e[m            \e[0;34m|\e[0m"
-echo -e "\e[0;34m'-----------------------------------------'\e[0m"
-echo -e " \e[1;31m>>\e[0m\e[0;32mChange Port For Xray :\e[0m"
-echo -e "  [1]  Change Port Xray Core Tls      [ ${RED}$tls${NC} ]"
-echo -e "  [2]  Change Port Xray Core None TLS [ ${RED}$none${NC} ]"
-echo -e " ============================================="
+echo -e "\e[$line┌──────────────────────────────────────────────────────┐\e[m"
+echo -e "\e[$line│                 \e[$box CHANGE PORT XRAY\\e[30m                    \e[$line│\e[m"
+echo -e "\e[$line└──────────────────────────────────────────────────────┘\e[m"
+echo -e "  [\e[$number 01${NC}]\e[$below • Change Port Xray Core Tls      ${NC}[ ${RED}$tls${NC} ]"
+echo -e "  [\e[$number 02${NC}]\e[$below • Change Port Xray Core None TLS${NC} [ ${RED}$none${NC} ]"
+echo -e ""
 echo -e "  [x]  Back To Menu Change Port"
 echo -e "  [y]  Go To Main Menu"
 echo -e ""
@@ -113,5 +121,7 @@ menu
 ;;
 *)
 echo "Please enter an correct number"
+sleep 1
+port-xray
 ;;
 esac
