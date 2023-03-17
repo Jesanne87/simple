@@ -1,3 +1,4 @@
+#!/bin/bash
 #wget https://github.com/${GitUser}/
 GitUser="Jesanne87"
 #IZIN SCRIPT
@@ -35,3 +36,7 @@ if getent passwd $Pengguna > /dev/null 2>&1; then
 else
         echo -e "Failure: User $Pengguna Not Exist."
 fi
+echo ""
+read -n1 -r -p "Press any key to continue..."
+    sleep 1
+    ssh
