@@ -27,23 +27,22 @@ export CYA='\033[0;36m'
 export LHT='\033[0;37m'
 export NC='\033[0m'
 clear
-echo -e "${COLOR1}╔════════════════════════════════════════════╗\033[0m"
-echo -e "${COLOR1}║                ${WH} ${bold}DNS Changer                $COLOR1║\033[0m"
-echo -e "${COLOR1}╚════════════════════════════════════════════╝\033[0m"
+echo -e "\e[$line╔════════════════════════════════════════════╗\033[0m"
+echo -e "\e[$line║                \e[$box DNS Changer                \e[$line║\033[0m"
+echo -e "\e[$line╚════════════════════════════════════════════╝\033[0m"
 dnsfile="/root/dns"
 if test -f "$dnsfile"; then
 udns=$(cat /root/dns)
 echo -e ""
 echo -e "   Active DNS : \033[1;37m$udns\033[0m"
 fi
- echo -e "${NC}${WH}[${COLOR1}01${WH}]${COLOR1}• ${WH}${bold}Temporary DNS\033[0m"
- echo -e "${NC}${WH}[${COLOR1}02${WH}]${COLOR1}• ${WH}${bold}Permanent DNS\033[0m"
- echo -e "${NC}${WH}[${COLOR1}03${WH}]${COLOR1}• ${WH}${bold}Reset DNS To Default\033[0m"
- echo -e "${NC}${WH}[${COLOR1}00${WH}]${COLOR1}• ${bold}Back To Menu\033[0m"
+ echo -e "[\e[$number 01${NC}]${YLW} • Temporary DNS\033[0m"
+ echo -e "[\e[$number 02${NC}]${YLW} • Permanent DNS\033[0m"
+ echo -e "[\e[$number 03${NC}]${YLW} • Reset DNS To Default\033[0m"
 echo ""
-echo -e "${COLOR1}Press [ Ctrl+C ] • To-Exit-Script\033[0m"
+echo -e "              Press [ x ] To Go System Menu "
 echo ""
-read -p "Select From Options [ 1 - 4 ] :  " dns
+read -p "Select From Options [ 1-3 or x ] :  " dns
 echo -e ""
 case $dns in
 1)
@@ -120,13 +119,12 @@ fi
 clear
 dns
 ;;
-0 | 00 )
-clear
-menu-other
+x)
+system
 ;;
 *)
 echo "Please enter an correct number"
-clear
+sleep 1
 dns
 ;;
 esac
