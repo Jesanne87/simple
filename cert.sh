@@ -51,7 +51,8 @@ systemctl restart xray@trnone.service
 systemctl restart xray@xtrojan.service
 systemctl restart xray@trojan.service
 echo -e "[ ${green}INFO${NC} ] All finished !" 
-    sleep 3
-    menu
-fi
+echo -e ""
+read -n1 -r -p "                Press any key to continue..."
+    sleep 1
+    system
 
