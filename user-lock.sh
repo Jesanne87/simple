@@ -43,5 +43,6 @@ clear
   echo "-----------------------------------------------"
 else
 echo "Username not found on your server."
-    exit 1
+    sleep 1.5
+    ssh 
 fi
