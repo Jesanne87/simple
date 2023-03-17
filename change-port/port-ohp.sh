@@ -43,7 +43,7 @@ echo -e "\e[$line┌────────────────────
 echo -e "\e[$line│              \e[$box CHANGE PORT OHP OPENSSH\e[30m                \e[$line│\e[m"
 echo -e "\e[$line└──────────────────────────────────────────────────────┘\e[m"
 echo -e "  [\e[$number 01${NC}]\e[$below • Change Port OHP SSH $ohpssh\e[m"
-echo -e "  [\e[$number 01${NC}]\e[$below • Change Port OHP Dropbear $ohpdrop\e[m"
+echo -e "  [\e[$number 02${NC}]\e[$below • Change Port OHP Dropbear $ohpdrop\e[m"
 echo -e ""
 echo -e "     [x]  Back To Menu Change Port"
 echo -e "     [y]  Go To Main Menu"
