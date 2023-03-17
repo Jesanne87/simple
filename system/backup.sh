@@ -1,70 +1,134 @@
-#wget https://github.com/${GitUser}/
-GitUser="Jesanne87"
-#IZIN SCRIPT
-MYIP=$(curl -sS ipv4.icanhazip.com)
-echo -e "\e[32mloading...\e[0m"
-clear
-# Valid Script
-VALIDITY () {
-    today=`date -d "0 days" +"%Y-%m-%d"`
-    Exp1=$(curl https://raw.githubusercontent.com/${GitUser}/allow/main/ipvps.conf | grep $MYIP | awk '{print $4}')
-    if [[ $today < $Exp1 ]]; then
-    echo -e "\e[32mYOUR SCRIPT ACTIVE..\e[0m"
-    else
-    echo -e "\e[31mYOUR SCRIPT HAS EXPIRED!\e[0m";
-    echo -e "\e[31mPlease renew your ipvps first\e[0m"
-    exit 0
-fi
-}
-IZIN=$(curl https://raw.githubusercontent.com/${GitUser}/allow/main/ipvps.conf | awk '{print $5}' | grep $MYIP)
-if [ $MYIP = $IZIN ]; then
-echo -e "\e[32mPermission Accepted...\e[0m"
-VALIDITY
-else
-echo -e "\e[31mPermission Denied!\e[0m";
-echo -e "\e[31mPlease buy script first\e[0m"
-exit 0
-fi
-echo -e "\e[32mloading...\e[0m"
+#!/bin/bash
+# =========================================
+# Quick Setup | Script Setup Manager
+# Edition : Stable Edition V1.0
+# Auther  : JsPhantom
+# (C) Copyright 2023
+# =========================================
+# TEXT ON BOX COLOUR
+box=$(cat /etc/box)
+# LINE COLOUR
+line=$(cat /etc/line)
+# TEXT COLOUR ON TOP
+text=$(cat /etc/text)
+# TEXT COLOUR BELOW
+below=$(cat /etc/below)
+# BACKGROUND TEXT COLOUR
+back_text=$(cat /etc/back)
+# NUMBER COLOUR
+number=$(cat /etc/number)
+red='\e[1;31m'
+green='\e[0;32m'
+purple='\e[0;35m'
+orange='\e[0;33m'
+NC='\e[0m'
 clear
 IP=$(wget -qO- icanhazip.com);
 date=$(date +"%Y-%m-%d")
+
+itoken=$(curl -sS https://raw.githubusercontent.com/SSHSEDANG4/update/main/asu)
+
+MYIP=$(curl -sS ipv4.icanhazip.com)
+NameUser=$(curl -sS https://raw.githubusercontent.com/Jesanne87/allow/main/accessmenu | grep $MYIP | awk '{print $2}')
+
 clear
-echo " Enter Your Email To Receive Message"
-read -rp " Email: " -e email
+echo -e "\e[$line╔════════════════════════════════════════════╗${NC}"
+echo -e "\e[$line║ \e[$box           • BACKUP PANEL MENU •          ${NC} \e[$line║$NC"
+echo -e "\e[$line╚════════════════════════════════════════════╝${NC}"
+echo -e "\e[$line╔════════════════════════════════════════════╗${NC}"
+echo -e "\e[$line║${NC}  [INFO] Create password for database"
+read -rp "   [INFO] Enter password : " -e InputPass
 sleep 1
-echo Directory Created
-mkdir /root/backup
+if [[ -z $InputPass ]]; then
+exit 0
+fi
+echo -e "\e[$line║${NC}  [INFO] Processing... "
+mkdir -p /root/backup
 sleep 1
-echo Start Backup
-clear
-cp /etc/passwd backup/
-cp /etc/group backup/
-cp /etc/shadow backup/
-cp /etc/gshadow backup/
-cp -r /etc/wireguard backup/wireguard
-cp /etc/shadowsocks-libev/akun.conf backup/ss.conf
-cp -r /var/lib/premium-script/ backup/premium-script
-cp -r /usr/local/etc/xray backup/xray
-cp -r /etc/trojan-go backup/trojan-go
-cp -r /usr/local/shadowsocksr/ backup/shadowsocksr
-cp -r /home/vps/public_html backup/public_html
+
+cp -r /root/.acme.sh /root/backup/ &> /dev/null
+cp /etc/passwd /root/backup/ &> /dev/null
+cp /etc/group /root/backup/ &> /dev/null
+cp /etc/shadow /root/backup/ &> /dev/null
+cp /etc/gshadow /root/backup/ &> /dev/null
+cp /etc/ppp/chap-secrets /root/backup/chap-secrets &> /dev/null
+cp /etc/ipsec.d/passwd /root/backup/passwd1 &> /dev/null
+cp -r /var/lib/ /root/backup/ &> /dev/null
+cp -r /etc/xray /root/backup/xray &> /dev/null
+cp -r /home/vps/public_html /root/backup/public_html &> /dev/null
+cp -r /etc/cron.d /root/backup/cron.d &> /dev/null
+cp /etc/crontab /root/backup/crontab &> /dev/null
 cd /root
-zip -r $IP-$date.zip backup > /dev/null 2>&1
-rclone copy /root/$IP-$date.zip dr:backup/
-url=$(rclone link dr:backup/$IP-$date.zip)
-id=(`echo $url | grep '^https' | cut -d'=' -f2`)
-link="https://drive.google.com/u/4/uc?id=${id}&export=download"
-echo -e "The following is a link to your vps data backup file.
+zip -rP $InputPass $NameUser.zip backup > /dev/null 2>&1
 
-Your VPS IP $IP
+##############++++++++++++++++++++++++#############
+LLatest=`date`
+Get_Data () {
+git clone https://github.com/SSHSEDANG4/backupuserssn.git /root/user-backup/ &> /dev/null
+}
 
-$link
+Mkdir_Data () {
+mkdir -p /root/user-backup/$NameUser
+}
 
-If you want to restore data, please enter the link above.
+Input_Data_Append () {
+if [ ! -f "/root/user-backup/$NameUser/$NameUser-last-backup" ]; then
+touch /root/user-backup/$NameUser/$NameUser-last-backup
+fi
+echo -e "User         : $NameUser
+last-backup : $LLatest
+" >> /root/user-backup/$NameUser/$NameUser-last-backup
+mv /root/$NameUser.zip /root/user-backup/$NameUser/
+}
 
-Thank You For Using Our Services" | mail -s "Backup Data" $email
-rm -rf /root/backup
-rm -r /root/$IP-$date.zip
-echo "Done"
-echo "Please Check Your Email"
+Save_And_Exit () {
+    DATE=$(date +'%d %B %Y')
+    cd /root/user-backup
+    git config --global user.email "sshsedang@gmail.com" &> /dev/null
+    git config --global user.name "SSHSEDANG4" &> /dev/null
+    rm -rf .git &> /dev/null
+    git init &> /dev/null
+    git add . &> /dev/null
+    git commit -m backup &> /dev/null
+    git branch -M main &> /dev/null
+    git remote add origin https://github.com/SSHSEDANG4/backupuserssn
+    git push -f https://$itoken@github.com/SSHSEDANG4/backupuserssn.git &> /dev/null
+}
+
+if [ ! -d "/root/user-backup/" ]; then
+sleep 1
+echo -e "\e[$line║${NC}  [INFO] Getting database... "
+Get_Data
+Mkdir_Data
+sleep 1
+echo -e "\e[$line║${NC}  [INFO] Getting info server... "
+Input_Data_Append
+sleep 1
+echo -e "\e[$line║${NC}  [INFO] Processing updating server...... "
+Save_And_Exit
+fi
+link="https://raw.githubusercontent.com/SSHSEDANG4/backupuserssn/main/$NameUser/$NameUser.zip"
+sleep 1
+echo -e "   [INFO] Backup done "
+sleep 1
+echo
+sleep 1
+echo -e "   [INFO] Generete Link Backup "
+sleep 2
+echo -e "  The following is a link to your vps data backup file.
+  Your VPS IP $IP
+  $link
+  save the link pliss!"
+echo -e "  If you want to restore data, please enter the link above."
+echo -e "  Thank You For Using Our Services"
+cd
+rm -rf /root/backup &> /dev/null
+rm -rf /root/user-backup &> /dev/null
+rm -f /root/$NameUser.zip &> /dev/null
+echo -e "\e[$line╚════════════════════════════════════════════╝${NC}" 
+echo -e "\e[$line╔════════════════════ BY ════════════════════╗${NC}"
+echo -e "\e[$line║\e[$box            •   JsPhantom-VPN   •           \e[$line║${NC}"
+echo -e "\e[$line╚════════════════════════════════════════════╝${NC}" 
+echo -e ""
+read -n 1 -s -r -p "Press any key to back on menu"
+system
