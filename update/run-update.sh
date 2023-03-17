@@ -1,3 +1,4 @@
+#!/bin/bash
 #wget https://github.com/${GitUser}/
 GitUser="Jesanne87"
 if [ "${EUID}" -ne 0 ]; then
@@ -36,21 +37,20 @@ else
 sts="${Error}"
 fi
 clear
-echo ""
-echo -e "   \e[$line--------------------------------------------------------\e[m"
-echo -e "   \e[$back_text                 \e[30m[\e[$box CHECK NEW UPDATE\e[30m ]                   \e[m"
-echo -e "   \e[$line--------------------------------------------------------\e[m"
-echo -e "   \e[$below VERSION NOW >> $Info1"
-echo -e "   \e[$below STATUS UPDATE >> $sts"
+echo -e "\e[$line┌──────────────────────────────────────────────────────┐\e[m"
+echo -e "\e[$line│                 \e[$box CHECK NEW UPDATE\e[30m                  \e[$line│\e[m"
+echo -e "\e[$line└──────────────────────────────────────────────────────┘\e[m"
+echo -e "\e[$below VERSION NOW >> $Info1"
+echo -e "\e[$below STATUS UPDATE >> $sts"
 echo -e ""
 echo -e "       \e[1;31mWould you like to proceed?\e[0m"
 echo ""
 echo -e "            \e[0;32m[ Select Option ]\033[0m"
-echo -e "     \e[$number [1]\e[m \e[$below Check Script Update Now\e[m"
-echo -e "     \e[$number [x]\e[m \e[$below Back To Update Menu\e[m"
-echo -e "     \e[$number [y]\e[m \e[$below Back To Main Menu\e[m"
+echo -e "[\e[$number 01${NC}]\e[$below • Check Script Update Now\e[m"
+echo -e "[\e[$number 02${NC}]\e[$below • Back To Update Menu\e[m"
+echo -e "[\e[$number 03${NC}]\e[$below • Back To Main Menu\e[m"
 echo -e ""
-echo -e "   \e[$line--------------------------------------------------------\e[m"
+echo -e "\e[$line--------------------------------------------------------\e[m"
 echo -e "\e[$line"
 read -p "Please Choose 1 or x & y : " option2
 case $option2 in
@@ -84,7 +84,7 @@ sleep 1
 echo ""
 # UPDATE RUN-UPDATE
 cd /usr/bin
-wget -O run-update "https://raw.githubusercontent.com/${GitUser}/simple/main/update/run-update.sh"
+wget -O run-update "https://raw.githubusercontent.com/${GitUser}/lanjut/main/update/run-update.sh"
 chmod +x run-update
 # RUN UPDATE
 echo ""
@@ -96,24 +96,24 @@ echo ""
 echo -e "\e[0;32mNew Version Downloading started!\e[0m"
 sleep 2
 cd /usr/bin
-wget -O update "https://raw.githubusercontent.com/${GitUser}/simple/main/update/update.sh"
-wget -O run-update "https://raw.githubusercontent.com/${GitUser}/simple/main/update/run-update.sh"
-wget -O message-ssh "https://raw.githubusercontent.com/${GitUser}/simple/main/update/message-ssh.sh"
-wget -O change-port "https://raw.githubusercontent.com/${GitUser}/simple/main/change.sh"
-wget -O system "https://raw.githubusercontent.com/${GitUser}/simple/main/menu/system.sh"
-wget -O menu "https://raw.githubusercontent.com/${GitUser}/simple/main/menu.sh"
-wget -O add-host "https://raw.githubusercontent.com/${GitUser}/simple/main/system/add-host.sh"
-wget -O check-sc "https://raw.githubusercontent.com/${GitUser}/simple/main/system/running.sh"
-wget -O cert "https://raw.githubusercontent.com/${GitUser}/simple/main/cert.sh"
-wget -O trojaan "https://raw.githubusercontent.com/${GitUser}/simple/main/menu/trojaan.sh"
-wget -O xraay "https://raw.githubusercontent.com/${GitUser}/simple/main/menu/xraay.sh"
-wget -O xp "https://raw.githubusercontent.com/${GitUser}/simple/main/xp.sh"
-wget -O port-xray "https://raw.githubusercontent.com/${GitUser}/simple/main/change-port/port-xray.sh"
-wget -O themes "https://raw.githubusercontent.com/${GitUser}/simple/main/menu/themes.sh"
-wget -O autobackup "https://raw.githubusercontent.com/${GitUser}/simple/main/system/backupBot.sh"
-wget -O backup "https://raw.githubusercontent.com/${GitUser}/simple/main/system/backup.sh"
-wget -O bckp "https://raw.githubusercontent.com/${GitUser}/simple/main/system/bckp.sh"
-wget -O restore "https://raw.githubusercontent.com/${GitUser}/simple/main/system/restore.sh"
+wget -O update "https://raw.githubusercontent.com/${GitUser}/lanjut/main/update/update.sh"
+wget -O run-update "https://raw.githubusercontent.com/${GitUser}/lanjut/main/update/run-update.sh"
+wget -O message-ssh "https://raw.githubusercontent.com/${GitUser}/lanjut/main/update/message-ssh.sh"
+wget -O change-port "https://raw.githubusercontent.com/${GitUser}/lanjut/main/change.sh"
+wget -O system "https://raw.githubusercontent.com/${GitUser}/lanjut/main/menu/system.sh"
+wget -O menu "https://raw.githubusercontent.com/${GitUser}/lanjut/main/menu.sh"
+wget -O add-host "https://raw.githubusercontent.com/${GitUser}/lanjut/main/system/add-host.sh"
+wget -O check-sc "https://raw.githubusercontent.com/${GitUser}/lanjut/main/system/running.sh"
+wget -O certv2ray "https://raw.githubusercontent.com/${GitUser}/lanjut/main/cert.sh"
+wget -O trojaan "https://raw.githubusercontent.com/${GitUser}/lanjut/main/menu/trojaan.sh"
+wget -O xraay "https://raw.githubusercontent.com/${GitUser}/lanjut/main/menu/xraay.sh"
+wget -O xp "https://raw.githubusercontent.com/${GitUser}/lanjut/main/xp.sh"
+wget -O port-xray "https://raw.githubusercontent.com/${GitUser}/lanjut/main/change-port/port-xray.sh"
+wget -O themes "https://raw.githubusercontent.com/${GitUser}/lanjut/main/menu/themes.sh"
+#wget -O autobackup "https://raw.githubusercontent.com/${GitUser}/lanjut/main/system/backupBot.sh"
+wget -O backup "https://raw.githubusercontent.com/${GitUser}/lanjut/main/system/backup.sh"
+#wget -O bckp "https://raw.githubusercontent.com/${GitUser}/lanjut/main/system/bckp.sh"
+wget -O restore "https://raw.githubusercontent.com/${GitUser}/lanjut/main/system/restore.sh"
 chmod +x update
 chmod +x run-update
 chmod +x message-ssh
@@ -128,9 +128,9 @@ chmod +x xraay
 chmod +x xp
 chmod +x port-xray
 chmod +x themes
-chmod +x autobackup
+#chmod +x autobackup
 chmod +x backup
-chmod +x bckp
+#chmod +x bckp
 chmod +x restore
 clear
 echo -e ""
@@ -149,21 +149,20 @@ cd
 echo "$ver" > /home/ver
 rm -f update.sh
 clear
-echo ""
-echo -e "\033[0;34m----------------------------------------\033[0m"
-echo -e "\E[44;1;39m            SCRIPT UPDATED              \E[0m"
-echo -e "\033[0;34m----------------------------------------\033[0m"
+echo -e "\e[$line┌──────────────────────────────────────────────────────┐\e[m"
+echo -e "\e[$line│                 \e[$box SCRIPT UPDATED\e[30m                  \e[$line│\e[m"
+echo -e "\e[$line└──────────────────────────────────────────────────────┘\e[m"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
 ;;
-x)
+2)
 clear
 update
 ;;
-y)
+3)
 clear
-menu
+system
 ;;
 *)
 clear
