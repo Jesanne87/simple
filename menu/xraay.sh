@@ -74,9 +74,9 @@ function menu1 () {
 clear
 tls="$(cat ~/log-install.txt | grep -w "Vmess Ws Tls" | cut -d: -f2|sed 's/ //g')"
 none="$(cat ~/log-install.txt | grep -w "Vmess Ws None Tls" | cut -d: -f2|sed 's/ //g')"
-echo -e   "  \e[$line┌──────────────────────────────────────────────────────┐\e[m"
-echo -e   " \e[$line │           \e[$box CREATE USER XRAY VMESS WS TLS             \e[$line│  \e[m"
-echo -e   "  \e[$line└──────────────────────────────────────────────────────┘\e[m"
+echo -e   "\e[$line┌──────────────────────────────────────────────────────┐\e[m"
+echo -e   "\e[$line│           \e[$box CREATE USER XRAY VMESS WS TLS             \e[$line│  \e[m"
+echo -e   "\e[$line└──────────────────────────────────────────────────────┘\e[m"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 		read -rp "Username: " -e user
 		CLIENT_EXISTS=$(grep -w $user /usr/local/etc/xray/vmess.json | wc -l)
@@ -91,9 +91,9 @@ export patchtls=/JsPhantom-vmesswstls
 export patchnontls=/JsPhantom-vmesswsntls
 export uuid=$(cat /proc/sys/kernel/random/uuid)
 
-read -p "   Bug Address (Example: www.google.com) : " address
-read -p "   Bug SNI/Host (Example : m.facebook.com) : " sni
-read -p "   Expired (days) : " masaaktif
+read -p "Bug Address (Example: www.google.com) : " address
+read -p "Bug SNI/Host (Example : m.facebook.com) : " sni
+read -p "Expired (days) : " masaaktif
 
 bug_addr=${address}.
 bug_addr2=$address
