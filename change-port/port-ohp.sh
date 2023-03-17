@@ -3,6 +3,16 @@ GitUser="Jesanne87"
 #IZIN SCRIPT
 MYIP=$(curl -sS ipv4.icanhazip.com)
 echo -e "\e[32mloading...\e[0m"
+# LINE COLOUR
+line=$(cat /etc/line)
+# TEXT COLOUR BELOW
+below=$(cat /etc/below)
+# BACKGROUND TEXT COLOUR
+back_text=$(cat /etc/back)
+# NUMBER COLOUR
+number=$(cat /etc/number)
+# TEXT ON BOX COLOUR
+box=$(cat /etc/box)
 clear
 # Valid Script
 VALIDITY () {
@@ -29,13 +39,12 @@ echo -e "\e[32mloading...\e[0m"
 clear
 ohpssh="$(cat ~/log-install.txt | grep -w "OHP SSH" | cut -d: -f2|sed 's/ //g')"
 ohpdrop="$(cat ~/log-install.txt | grep -w "OHP Dropbear" | cut -d: -f2|sed 's/ //g')"
-echo -e "\e[1;33m.-----------------------------------------.\e[0m"
-echo -e "\e[1;33m|         \e[0;36mCHANGE PORT OHP OPENSSH\e[m         \e[1;33m|\e[0m"
-echo -e "\e[1;33m'-----------------------------------------'\e[0m"
-echo -e " \e[1;31m>>\e[0m\e[0;32mChange Port For OHP OpenSSH:\e[0m"
-echo -e "     [1]  Change Port OHP SSH $ohpssh"
-echo -e "     [2]  Change Port OHP Dropbear $ohpdrop"
-echo -e "======================================"
+echo -e "\e[$line┌──────────────────────────────────────────────────────┐\e[m"
+echo -e "\e[$line│              \e[$box CHANGE PORT OHP OPENSSH\e[30m                \e[$line│\e[m"
+echo -e "\e[$line└──────────────────────────────────────────────────────┘\e[m"
+echo -e "  [\e[$number 01${NC}]\e[$below • Change Port OHP SSH $ohpssh\e[m"
+echo -e "  [\e[$number 01${NC}]\e[$below • Change Port OHP Dropbear $ohpdrop\e[m"
+echo -e ""
 echo -e "     [x]  Back To Menu Change Port"
 echo -e "     [y]  Go To Main Menu"
 echo -e ""
@@ -118,5 +127,7 @@ menu
 ;;
 *)
 echo "Please enter an correct number"
+sleep 1
+port-ohp
 ;;
 esac
