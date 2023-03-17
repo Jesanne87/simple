@@ -3,6 +3,16 @@ GitUser="Jesanne87"
 #IZIN SCRIPT
 MYIP=$(curl -sS ipv4.icanhazip.com)
 echo -e "\e[32mloading...\e[0m"
+# LINE COLOUR
+line=$(cat /etc/line)
+# TEXT COLOUR BELOW
+below=$(cat /etc/below)
+# BACKGROUND TEXT COLOUR
+back_text=$(cat /etc/back)
+# NUMBER COLOUR
+number=$(cat /etc/number)
+# TEXT ON BOX COLOUR
+box=$(cat /etc/box)
 clear
 # Valid Script
 VALIDITY () {
@@ -29,13 +39,12 @@ echo -e "\e[32mloading...\e[0m"
 clear
 sqd="$(cat /etc/squid/squid.conf | grep -i http_port | awk '{print $2}' | head -n1)"
 sqd2="$(cat /etc/squid/squid.conf | grep -i http_port | awk '{print $2}' | tail -n1)"
-echo -e "\e[0;31m.-----------------------------------------.\e[0m"
-echo -e "\e[0;31m|             \e[0;36mCHANGE PORT SQUID\e[m           \e[0;31m|\e[0m"
-echo -e "\e[0;31m'-----------------------------------------'\e[0m"
-echo -e " \e[1;31m>>\e[0m\e[0;34mChange Port For Squid:\e[0m"
-echo -e "     [1]  Change Port $sqd"
-echo -e "     [2]  Change Port $sqd2"
-echo -e "======================================"
+echo -e "\e[$line┌──────────────────────────────────────────────────────┐\e[m"
+echo -e "\e[$line│                 \e[$box CHANGE PORT SQUID\\e[30m                   \e[$line│\e[m"
+echo -e "\e[$line└──────────────────────────────────────────────────────┘\e[m"
+echo -e "  [\e[$number 01${NC}]\e[$below • Change Port $sqd\e[m"
+echo -e "  [\e[$number 02${NC}]\e[$below • Change Port $sqd2\e[m"
+echo -e ""
 echo -e "     [x]  Back To Menu Change Port"
 echo -e "     [y]  Go To Main Menu"
 echo -e ""
@@ -84,5 +93,7 @@ menu
 ;;
 *)
 echo "Please enter an correct number"
+sleep 1
+port-squid
 ;;
 esac
