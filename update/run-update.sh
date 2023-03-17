@@ -122,7 +122,7 @@ chmod +x system
 chmod +x menu
 chmod +x add-host
 chmod +x check-sc
-chmod +x cert
+chmod +x certv2ray
 chmod +x trojaan
 chmod +x xraay
 chmod +x xp
