@@ -133,8 +133,8 @@ number=$(cat /etc/number)
 banner=$(cat /usr/bin/bannerku)
 ascii=$(cat /usr/bin/test)
 clear
-echo -e "\e[$banner_colour"
-figlet -f $ascii "$banner"
+#echo -e "\e[$banner_colour"
+figlet -f $ascii "$banner" |lolcat
 echo -e " \e[$line ┌──────────────────────────────────────────────────────┐${NC}"
 echo -e " \e[$line │\e[$box	       ───[ Server Information ]───              \e[$line│${NC}"
 echo -e " \e[$line └──────────────────────────────────────────────────────┘${NC}"
