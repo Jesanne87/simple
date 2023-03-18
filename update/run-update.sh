@@ -88,24 +88,23 @@ clear
 echo -e "\e[0;32mNew Version Downloading started!\e[0m"
 sleep 2
 cd /usr/bin
-rm update
-rm run-update
-rm message-ssh
-rm change-port
-rm system
-rm menu
-rm check-sc
-rm certv2ray
-rm trojaan
-rm xraay
-rm xray-menu
-rm vless-menu
-rm vmess-menu
-rm xp
-rm port-xray
-rm themes
-rm backup
-rm restore
+rm -f update
+rm -f run-update
+rm -f message-ssh
+rm -f change-port
+rm -f system
+rm -f menu
+rm -f check-sc
+rm -f certv2ray
+rm -f trojaan
+rm -f xray-menu
+rm -f vless-menu
+rm -f vmess-menu
+rm -f xp
+rm -f port-xray
+rm -f themes
+rm -f backup
+rm -f restore
 wget -O update "https://raw.githubusercontent.com/${GitUser}/simple/main/update/update.sh"
 wget -O run-update "https://raw.githubusercontent.com/Jesanne87/simple/main/update/run-update.sh"
 wget -O message-ssh "https://raw.githubusercontent.com/${GitUser}/simple/main/update/message-ssh.sh"
