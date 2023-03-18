@@ -199,7 +199,7 @@ systemctl start stunnel4
 /etc/init.d/stunnel4 restart
 
 # // OpenVPN
-wget https://raw.githubusercontent.com/${GitUser}/lanjut/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+wget https://raw.githubusercontent.com/${GitUser}/simple/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 # Install figlet ascii
 sudo apt-get install figlet
@@ -246,10 +246,10 @@ echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
 # // Bannerku menu
-wget -O /usr/bin/bannerku https://raw.githubusercontent.com/${GitUser}/lanjut/main/banner/bannerku && chmod +x /usr/bin/bannerku
+wget -O /usr/bin/bannerku https://raw.githubusercontent.com/${GitUser}/simple/main/banner/bannerku && chmod +x /usr/bin/bannerku
 
 # // install bbr
-wget https://raw.githubusercontent.com/${GitUser}/lanjut/main/system/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+wget https://raw.githubusercontent.com/${GitUser}/simple/main/system/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 
 # // blockir torrent
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
