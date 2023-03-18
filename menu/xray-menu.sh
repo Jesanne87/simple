@@ -22,18 +22,17 @@ export back_text=$(cat /etc/back)
 export number=$(cat /etc/number)
 ###########- END COLOR CODE -##########
 clear
-echo -e " ${COLOR1}╔══════════════════════════════════════════════════════╗${NC}"
-echo -e " ${COLOR1}║               ${NC}${WH}»»»»[ XRAY PANEL ]««««                 ${COLOR1}║${NC}"
-echo -e " ${COLOR1}╠══════════════════════════════════════════════════════╣${NC}" 
-echo -e " ${COLOR1}║                                                      ║${NC}"
-echo -e " ${COLOR1}║  ${NC}${WH}[${COLOR1}01${WH}]${COLOR1}• ${WH}${bold}Vless Panel     ${COLOR1}║${NC}"
-echo -e " ${COLOR1}║  ${NC}${WH}[${COLOR1}02${WH}]${COLOR1}• ${WH}${bold}Vmess Panel          ${COLOR1}║${NC}"
-echo -e " ${COLOR1}║  ${NC}${WH}[${COLOR1}03${WH}]${COLOR1}• ${WH}${bold}Trojan Panel                               ${COLOR1}║${NC}"
-echo -e " ${COLOR1}║                                                      ║${NC}"
-echo -e " ${COLOR1}╚══════════════════════════════════════════════════════╝${NC}" 
-echo ""
+echo -e "   \e[$line┌──────────────────────────────────────────────────────┐\e[m"
+echo -e "   \e[$line│\e[$box                      XRAY PANEL                      \e[$line│\e[m"
+echo -e "   \e[$line└──────────────────────────────────────────────────────┘\e[m"
+echo -e "    [\e[$number 01${NC}]\e[$below • Vless Menu\e[m"
+echo -e "    [\e[$number 02${NC}]\e[$below • Vmess Menu\e[m"
+echo -e "    [\e[$number 03${NC}]\e[$below • Trojan Menu\e[m"
+echo -e ""
 echo -e "                 Press [ x ] To Go Main Menu "
+echo -e ""
 echo -ne " ${bold}${GRN}Select menu ${NC}: "; read opt
+echo -e ""
 case $opt in
 01 | 1)vless-menu
 ;;
@@ -44,7 +43,7 @@ case $opt in
 x | X)menu
 ;;
 *)
-echo " Tolong masukkan nombor yang betul!!"
+echo -e "\e[1;31mYou Entered The Wrong Number, Please Try Again!\e[0m"
+sleep 1
 xray-menu
-;;
 esac
