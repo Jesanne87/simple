@@ -208,7 +208,7 @@ git clone https://github.com/xero/figlet-fonts
 mv figlet-fonts/* figlet && rm –rf figlet-fonts
 
 # // install lolcat
-#wget https://raw.githubusercontent.com/${GitUser}/simple/main/lolcat.sh &&  chmod +x lolcat.sh && ./lolcat.sh
+wget https://raw.githubusercontent.com/${GitUser}/simple/main/lolcat.sh &&  chmod +x lolcat.sh && ./lolcat.sh
 
 # // install fail2ban
 apt -y install fail2ban
