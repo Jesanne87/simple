@@ -275,5 +275,6 @@ echo -e "    \e[1;32m╚══════════════════�
 echo ""
 echo -e "   \e[93mYour VPS Will Be Automatical Reboot In 5 seconds\e[0m"
 rm -r setup.sh
+secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
 sleep 5
 reboot
