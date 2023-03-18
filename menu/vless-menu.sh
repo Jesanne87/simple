@@ -105,7 +105,7 @@ echo -e "Created   : $harini"
 echo -e "Expired   : $exp"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu xray"
-xraay
+vless-menu
 }
 
 # TRIAL USER VLESS WS
@@ -177,7 +177,7 @@ echo -e "Created   : $harini"
 echo -e "Expired   : $exp"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu xray"
-xraay
+vless-menu
 }
 
 # DELETE USER VLESS WS
@@ -188,7 +188,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vls " "/usr/local/etc/xray/vless.json")
 		echo "You have no existing clients!"
     echo ""
     read -n 1 -s -r -p "Press any key to back on menu xray"
-xraay
+vless-menu
 	fi
 
 	clear
@@ -224,7 +224,7 @@ echo " Expired On  : $exp"
 echo " •───────────────────────────────•"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu xray"
-xraay
+vless-menu
 }
 
 #RENEW VLESS WS
@@ -236,7 +236,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vls " "/usr/local/etc/xray/vless.json")
 		echo "You have no existing clients!"
     echo ""
     read -n 1 -s -r -p "Press any key to back on menu xray"
-xraay
+vless-menu
 	fi
 
 	clear
@@ -280,7 +280,7 @@ echo " Expired On  : $exp4"
 echo " •───────────────────────────────•"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu xray"
-xraay
+vless-menu
 }
 
 # show user vless ws
@@ -294,7 +294,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vls " "/usr/local/etc/xray/vless.json")
 		echo "You have no existing clients!"
 	  echo ""
     read -n 1 -s -r -p "Press any key to back on menu xray"
-xraay
+vless-menu
   fi
 
 	clear
@@ -346,7 +346,7 @@ echo -e "Created   : $harini"
 echo -e "Expired   : $exp"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu xray"
-xraay
+vless-menu
 }
 
 # USER LOGIN VLESS WS
@@ -390,7 +390,7 @@ rm -rf /tmp/other.txt
 done
 echo ""
 read -n 1 -s -r -p "         Press any key to back on menu xray"
-xraay
+vless-menu
 }
 
 # CREATE USER VLESS XTLS
@@ -457,7 +457,7 @@ echo -e "Created  : $harini"
 echo -e "Expired  : $exp"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu xray"
-xraay
+vless-menu
 }
 
 # TRIAL USER VLESS XTLS
@@ -520,7 +520,7 @@ echo -e "Created  : $harini"
 echo -e "Expired  : $exp"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu xray"
-xraay
+vless-menu
 }
 
 # DELETE VLESS XTLS
@@ -532,7 +532,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vxtls " "/usr/local/etc/xray/config.json")
 		echo "You have no existing clients!"
     echo ""
     read -n 1 -s -r -p "Press any key to back on menu xray"
-xraay
+vless-menu
 	fi
 
 	clear
@@ -567,7 +567,7 @@ echo " Expired On  : $exp"
 echo " •───────────────────────────────•"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu xray"
-xraay
+vless-menu
 }
 
 # RENEW VLESS XTLS
@@ -580,7 +580,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vxtls " "/usr/local/etc/xray/config.json")
 		echo "You have no existing clients!"
 		echo ""
     read -n 1 -s -r -p "Press any key to back on menu xray"
-xraay
+vless-menu
 	fi
 
 	clear
@@ -623,7 +623,7 @@ echo " Expired On  : $exp4"
 echo " •───────────────────────────────•"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu xray"
-xraay
+vless-menu
 }
 
 #SHOW VLESS XTLS
@@ -637,7 +637,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vxtls " "/usr/local/etc/xray/config.json")
 		echo "You have no existing clients!"
     echo ""
     read -n 1 -s -r -p "Press any key to back on menu xray"
-xraay
+vless-menu
 	fi
 
 	clear
@@ -685,7 +685,7 @@ echo -e "Created    : $harini"
 echo -e "Expired    : $exp"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu xray"
-xraay
+vless-menu
 }
 
 # CEK USER LOGIN VLESS XTLS
@@ -729,7 +729,7 @@ rm -rf /tmp/other.txt
 done
 echo ""
 read -n 1 -s -r -p "          Press any key to back on menu xray"
-xraay
+vless-menu
 }
 # MENU XRAY VMESS & VLESS
 clear
@@ -759,7 +759,7 @@ echo -e "   \e[$number    >> Total :\e[m \e[$below ${total3} Client\e[m"
 echo -e ""
 echo -e "                 Press [ x ] To Go Main Menu "
 echo -e ""
-read -rp "        Please Input Number  [1-18 or x] :  "  num
+read -rp "        Please Input Number  [1-12 or x] :  "  num
 echo -e ""
 if [[ "$num" = "1" ]]; then
 menu7
@@ -786,9 +786,9 @@ menu17
 elif [[ "$num" = "12" ]]; then
 menu18
 elif [[ "$num" = "x" ]]; then
-menu
+xray-menu
 else
-clear
 echo -e "\e[1;31mYou Entered The Wrong Number, Please Try Again!\e[0m"
 sleep 1
-xraay
+vless-menu
+fi
