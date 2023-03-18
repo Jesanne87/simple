@@ -232,7 +232,7 @@ echo -e "Created          : $harini"
 echo -e "Expired          : $exp"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu xray"
-xraay
+vmess-menu
 }
 
 # // TRIAL USER
@@ -431,7 +431,7 @@ echo -e "Created     : $harini"
 echo -e "Expired     : $exp"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu xray"
-xraay
+vmess-menu
 }
 
 # FUCTION DELETE USER
@@ -443,7 +443,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vms " "/usr/local/etc/xray/vmess.json")
 		echo "You have no existing clients!"
     echo ""
     read -n 1 -s -r -p "Press any key to back on menu xray"
-xraay
+vmess-menu
 	fi
 
 	clear
@@ -495,7 +495,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vms " "/usr/local/etc/xray/vmess.json")
 			echo "You have no existing clients!"
 		  echo "" 
     read -n 1 -s -r -p "Press any key to back on menu xray"
-xraay
+vmess-menu
 	fi
 
 	clear
@@ -539,7 +539,7 @@ echo " Expired On  : $exp4"
 echo " •───────────────────────────────•"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu xray"
-xraay
+vmess-menu
 }
 
 # show user
@@ -553,7 +553,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vms " "/usr/local/etc/xray/vmess.json")
 		echo "You have no existing clients!"
 		echo ""
     read -n 1 -s -r -p "Press any key to back on menu xray"
-xraay
+vmess-menu
 	fi
 
 	clear
@@ -729,7 +729,7 @@ echo -e "Created     : $harini"
 echo -e "Expired     : $exp"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu xray"
-xraay
+vmess-menu
 }
 
 # FUCTION CEK USER
@@ -773,7 +773,7 @@ rm -rf /tmp/other.txt
 done
 echo ""
 read -n 1 -s -r -p "    Press any key to back on menu xray"
-xraay
+vmess-menu
 }
 # MENU XRAY VMESS & VLESS
 clear
@@ -810,4 +810,5 @@ else
 clear
 echo -e "\e[1;31mYou Entered The Wrong Number, Please Try Again!\e[0m"
 sleep 1
-xraay
+vmess-menu
+fi
