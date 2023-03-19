@@ -148,7 +148,7 @@ echo -e " ${YLW}  EXPIRED STATUS         : ${NC}$exp $sts${NC}"
 echo -e " ${YLW}  SCRIPT VERSION	  : ${NC}$stl${NC}"
 echo -e " ${YLW}  CPU USAGE		  : ${NC}$cpu_usage${NC}"
 echo -e " ${YLW}  MEMORY USAGE           : ${NC}$uram MB/$tram MB${NC}"
-echo -e " ${YLW}  BANDWIDTH DATA USAGE	  : ${WH}$ttoday Daily/${YLW}$tmon Monthly${NC}"
+echo -e " ${YLW}  BANDWIDTH DATA USAGE	  : ${WH}$ttoday Daily/ ${YLW}$tmon Monthly${NC}"
 echo -e " \e[$line ┌──────────────────────────────────────────────────────┐${NC}"
 echo -e "   ${WH}Ssh/Ovpn  V2ray  Vless  Vlessxtls   Troj-Ws   Troj-Tls${NC}"
 echo -e "      ${GRN} $total_ssh       $vmess      $vless        $xtls          $trws         $trtls${NC}"
@@ -199,7 +199,6 @@ case $menu in
     clean-ram
     ;;
 *)
-    clear
     echo -e "\e[1;31mPlease enter an correct number\e[0m"
     sleep 1
     menu
