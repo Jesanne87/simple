@@ -60,6 +60,7 @@ echo "-------------------------------------"
 echo " "
 echo "===========================================";
 echo " ";
+echo ""
 read -n1 -r -p "Press any key to continue..."
     sleep 1
     ssh
