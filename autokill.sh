@@ -123,4 +123,9 @@ case $AutoKill in
                 clear
                 ssh
                 ;;
-        esac
+                *)
+               echo "Please enter an correct number"
+               sleep 1
+               ssh
+               ;;
+               esac
