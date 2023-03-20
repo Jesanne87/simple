@@ -34,3 +34,60 @@ sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.di
  <p align="center">
 <img src="https://github.com/Jesanne87/examples/blob/main/Untitled%20design.png?raw=true)?r=82s" width="600" alt="Ok"/></a></p>
 # Just for fun script!! Friendly User Panel
+# Nice Appearance
+# Recommended OS Debian 10 (SSHWS not work on Ubuntu OS)
+
+   ## Service & Port 
+
+   >>> [INFORMASI SSH & OpenVPN] 
+    
+   - OpenSSH                 : 22
+   - OpenVPN                 : TCP 1194, UDP 2200
+   - OpenVPN SSL             : 110
+   - Stunnel4                : 222, 777
+   - Dropbear                : 143, 109
+   - OHP Dropbear            : 8585
+   - OHP SSH                 : 8686
+   - OHP OpenVPN             : 8787
+   - Websocket SSH(HTTP)     : 80
+   - Websocket SSL(HTTPS)    : 443, 2096
+   - Websocket OpenVPN       : 2097
+
+   >>> [INFORMASI Sqd, Bdvp, Ngnx]
+    
+   - Squid Proxy             : 3128, 8000 (limit to IP Server)
+   - Badvpn                  : 7100, 7200, 7300
+   - Nginx                   : 81
+
+   >>> [INFORMASI XRAY]
+    
+   - Xray Vmess Ws Tls       : 443
+   - Xray Vless Ws Tls       : 443
+   - Xray Trojan Ws Tls      : 443
+   - Xray Vless Tcp Xtls     : 443
+   - Xray Trojan Tcp Tls     : 443
+   - Xray Vmess Ws None Tls  : 80
+   - Xray Vless Ws None Tls  : 80
+   - Xray Trojan Ws None Tls : 80
+
+  >>> [INFORMASI CLASH FOR ANDROID (YAML)]
+    
+   - Xray Vmess Ws Yaml      : Yes
+   - Xray Vless Ws Yaml      : Yes
+   - Xray Trojan Ws Yaml     : Yes
+   
+
+   >>> Server Information & Other Features
+   - Timezone                : Asia/Kuala_Lumpur (GMT +8)
+   - Fail2Ban                : [ON]
+   - Dflate                  : [ON]
+   - IPtables                : [ON]
+   - Auto-Reboot             : [ON]
+   - IPv6                    : [OFF]
+   - ON/OFF Auto reboot
+   - Restore Data
+   - Auto Delete Expired Account
+   - Full Orders For Various Services
+
+══════════════════ Moded Scirpts ══════════════════
+
