@@ -32,7 +32,7 @@ sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.di
 
  ```
  <p align="center">
-<img src="https://github.com/Jesanne87/examples/blob/main/Untitled%20design11111.jpg?raw=true)?r=82s" width="600" alt="Ok"/></a></p>
+<img src="https://github.com/Jesanne87/examples/blob/main/Untitled%20design121.png?raw=true)?r=82s" width="950" alt="Ok"/></a></p>
 
 Just for fun script!! Friendly User Panel
 <p>
