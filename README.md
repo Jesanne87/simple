@@ -39,7 +39,7 @@ Nice Appearance
 Recommended OS Debian 10 (SSHWS not work on Ubuntu OS)
 
  <p align="center">
-<img src="https://github.com/Jesanne87/examples/blob/main/Untitled%20design121.png?raw=true)?r=82s" width="950" alt="Ok"/></a></p>
+<img src="https://github.com/Jesanne87/examples/blob/main/freedom.png?raw=true)?r=82s" width="950" alt="Ok"/></a></p>
 
 >>> [INFORMASI SSH & OpenVPN] 
 
