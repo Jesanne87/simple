@@ -19,13 +19,13 @@ green='\e[0;32m'
 yell='\e[1;33m'
 NC='\e[0m'
 echo -e " [ ${green}INFO${NC} ] Installing SSH Slow DNS "
-echo "Progress..." | lolcat
+echo "Progress..."
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Downloading files... "
 wget -qc https://raw.githubusercontent.com/Jesanne87/simple/main/slowdnss/hostdnss.sh && chmod +x hostdnss.sh &&  sed -i -e 's/\r$//' hostdnss.sh && ./hostdnss.sh
 nameserver=$(cat /home/nsdomain)
 echo -e "[ ${green}INFO${NC} ] Download File... "
-echo "Progress..." | lolcat
+echo "Progress..."
 # SSH SlowDNS
 echo -e " [ ${green}INFO${NC} ] Successfully.. "
 wget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/Jesanne87/simple/main/slowdnss/sshd_config
