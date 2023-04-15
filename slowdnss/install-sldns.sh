@@ -27,9 +27,9 @@ nameserver=$(cat /home/nsdomain)
 echo -e "[ ${green}INFO${NC} ] Download File... "
 echo "Progress..."
 # SSH SlowDNS
-echo -e " [ ${green}INFO${NC} ] Successfully.. "
-wget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/Jesanne87/simple/main/slowdnss/sshd_config
-systemctl restart sshd
+#echo -e " [ ${green}INFO${NC} ] Successfully.. "
+#wget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/Jesanne87/simple/main/slowdnss/sshd_config
+#systemctl restart sshd
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Tambahan... "
 apt install screen -y
