@@ -36,6 +36,8 @@ Just for fun script!! Friendly User Panel
 <p>
 Nice Appearance
 <p>
+QRcode config support
+<p>
 Recommended OS Debian 10 (SSHWS not work on Ubuntu OS)
 
  <p align="center">
